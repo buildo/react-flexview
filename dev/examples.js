@@ -2,21 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import t from 'tcomb';
 import { Route, create } from 'react-router';
-import FlexView from '../src';
-import lodash, { find } from 'lodash';
+import { find, includes, pick } from 'lodash';
 import KitchenSink from 'buildo-react-components/src/kitchen-sink';
 import sections from './examples/index.js';
+import FlexView from '../src';
+
 
 import '../src/flexView.scss';
+
+/* KitchenSink styles */
 import 'buildo-react-components/src/kitchen-sink/style.scss';
 import 'buildo-react-components/src/more-or-less/moreOrLess.scss';
 import 'buildo-react-components/src/loading-spinner/style.scss';
 
+const log = (...args) => console.log(...args); // eslint-disable-line no-console
+
 const scope = {
   React, ReactDOM,
-  t,
-  log: (x) => console.log(x), // eslint-disable-line no-console
-  ...lodash,
+  t, log,
+  includes, pick,
   FlexView
 };
 
@@ -42,7 +46,7 @@ class Examples extends React.Component {
 
   onToggleSection = (sectionId) => {
     const { openSections } = this.state;
-    if (openSections.indexOf(sectionId) !== -1) {
+    if (includes(openSections, sectionId)) {
       this.setState({ openSections: openSections.filter(s => s !== sectionId) });
     } else {
       this.setState({ openSections: openSections.concat(sectionId) });

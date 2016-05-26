@@ -6,13 +6,13 @@
   "scripts": {
     "test": "./node_modules/karma/bin/karma start",
     "build": "rm -rf lib && mkdir lib && node-sass src --importer sass-importer.js --include-path node_modules -o lib && babel src -d lib",
-    "lint": "eslint src",
+    "lint": "eslint src dev/examples.js dev/examples",
     "preversion": "npm run lint && npm run test && npm run build-examples",
     "postversion": "git push && git push --tags",
     "prepublish": "npm run build",
     "build-examples": "npm run clean && webpack --config dev/webpack.config.build.babel.js --progress",
     "start": "npm run clean && webpack-dev-server --config dev/webpack.config.babel.js --progress --hot --inline",
-    "clean": "rm -rf examples/build"
+    "clean": "rm -rf dev/build"
   },
   "repository": {
     "type": "git",

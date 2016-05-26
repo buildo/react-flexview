@@ -2,16 +2,25 @@ class Example extends React.Component {
 
   constructor() {
     super();
-    this.state = {};
+    this.state = { output: {} };
   }
 
   componentDidMount() {
     this.updateOutput();
   }
 
-  updateOutput = () => (
-    this.setState({ flex: ReactDOM.findDOMNode(this.refs.output).style.flex })
-  );
+  updateOutput = () => {
+    const style = window.getComputedStyle(ReactDOM.findDOMNode(this.refs.output)) || {};
+    this.setState({
+      output: pick(style, [
+        'flexDirection',
+        'flex',
+        'flexWrap',
+        'alignItems',
+        'justifyContent'
+      ])
+    });
+  };
 
   linkState = key => ({
     value: this.state[key],
@@ -21,26 +30,53 @@ class Example extends React.Component {
     }
   });
 
+  parseValue = value => {
+    if (String(parseInt(value)) === value) {
+      return parseInt(value);
+    } else if (value === 'true') {
+      return true;
+    } else if (value === 'false') {
+      return false;
+    }
+    return null;
+  };
+
   getValues = () => {
-    const { grow, shrink, basis } = this.state || {};
+    const { column, grow, shrink, basis, wrap, hAlignContent, vAlignContent } = this.state;
     return {
-      grow: grow === 'true' ? true : (parseInt(grow) || undefined),
-      shrink: shrink === 'true' ? true : (parseInt(shrink) || undefined),
-      basis: String(parseInt(basis)) === basis ? parseInt(basis) : basis
+      column: column === 'true' || undefined,
+      grow: this.parseValue(grow) !== null ? this.parseValue(grow) : undefined,
+      shrink: this.parseValue(shrink) !== null ? this.parseValue(shrink) : undefined,
+      basis: this.parseValue(basis) !== null ? this.parseValue(basis) : basis,
+      wrap: wrap === 'true' || undefined,
+      hAlignContent: includes(['left', 'center', 'right'], hAlignContent) ? hAlignContent : undefined,
+      vAlignContent: includes(['top', 'center', 'bottom'], vAlignContent) ? vAlignContent : undefined
     };
   };
+
+  getInput = key => (
+    <div style={{ marginLeft: 20 }}>
+      {`${key}={`}<input valueLink={this.linkState(key)} />{'}'}
+    </div>
+  );
 
   render = () => (
     <div column>
       <h2>Input</h2>
       <div>
-        <input placeholder='grow' valueLink={this.linkState('grow')} />
-        <input placeholder='shrink' valueLink={this.linkState('shrink')} />
-        <input placeholder='basis' valueLink={this.linkState('basis')} />
+        {'<FlexView'}
+        {this.getInput('column')}
+        {this.getInput('grow')}
+        {this.getInput('shrink')}
+        {this.getInput('basis')}
+        {this.getInput('wrap')}
+        {this.getInput('hAlignContent')}
+        {this.getInput('vAlignContent')}
+        {'/>'}
       </div>
-      <FlexView {...this.getValues()} style={{  }} ref='output' />
+      <FlexView {...this.getValues()} ref='output' />
       <h2>Output</h2>
-      <input value={this.state.flex} readOnly />
+      {Object.keys(this.state.output).filter(k => this.state.output[k]).map(k => <div key={k}>{`${k}: ${this.state.output[k]}`}</div>)}
     </div>
   );
 

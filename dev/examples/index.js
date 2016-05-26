@@ -1,5 +1,4 @@
 import examplesJSON from 'raw!./examples.json';
-// import './styles';
 
 const json = JSON.parse(examplesJSON);
 
