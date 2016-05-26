@@ -1,0 +1,30 @@
+{
+  "title": "Components",
+  "id": "components",
+  "components": [
+    {
+      "id": "column",
+      "title": "Column",
+      "desc": "Column",
+      "examples": [
+        "Column.example"
+      ]
+    },
+    {
+      "id": "row",
+      "title": "Row",
+      "desc": "Row",
+      "examples": [
+        "Row.example"
+      ]
+    },
+    {
+      "id": "compute-flex",
+      "title": "ComputeFlex",
+      "desc": "ComputeFlex",
+      "examples": [
+        "ComputeFlex.example"
+      ]
+    }
+  ]
+}

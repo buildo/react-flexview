@@ -1,0 +1,67 @@
+@import '~sass-flex-mixins/src/sass-flex-mixins.scss';
+
+.react-flex-view {
+  box-sizing: 'border-box';
+  // some browsers don't set these by default on flex
+  min-width: 0;
+  min-height: 0;
+  @include display_flex();
+  @include flex_flex-wrap(nowrap);
+  @include flex_align-items(stretch);
+
+  &.flex-vertically-centered {
+    @include flex_align-items(center);
+  }
+
+  &.flex-column {
+    @include flex_flex-direction(column);
+  }
+
+  &.flex-row {
+    @include flex_flex-direction(row);
+  }
+
+  &.flex-auto {
+    @include flex_flex(0 0 auto);
+  }
+
+  &.flex-grow {
+    @include flex_flex(1 1 100%);
+  }
+
+  // ALIGN CONTENT
+
+  &.align-content-start {
+    @include flex_align-items(flex-start);
+  }
+
+  &.align-content-center {
+    @include flex_align-items(center);
+  }
+
+  &.align-content-end {
+    @include flex_align-items(flex-end);
+  }
+
+  &.justify-content-start {
+    @include flex_justify-content(flex-start);
+  }
+
+  &.justify-content-center {
+    @include flex_justify-content(center);
+  }
+
+  &.justify-content-end {
+    @include flex_justify-content(flex-end);
+  }
+
+  &.flex-wrap {
+    @include flex_flex-wrap(wrap);
+  }
+
+}
+
+.react-flex-view.react-flex-cell {
+  @include flex_justify-content(space-between);
+  @include flex_align-content(space-between);
+}
