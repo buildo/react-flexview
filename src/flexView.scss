@@ -9,10 +9,6 @@
   @include flex_flex-wrap(nowrap);
   @include flex_align-items(stretch);
 
-  &.flex-vertically-centered {
-    @include flex_align-items(center);
-  }
-
   &.flex-column {
     @include flex_flex-direction(column);
   }
@@ -21,12 +17,8 @@
     @include flex_flex-direction(row);
   }
 
-  &.flex-auto {
-    @include flex_flex(0 0 auto);
-  }
-
-  &.flex-grow {
-    @include flex_flex(1 1 100%);
+  &.flex-wrap {
+    @include flex_flex-wrap(wrap);
   }
 
   // ALIGN CONTENT
@@ -55,13 +47,4 @@
     @include flex_justify-content(flex-end);
   }
 
-  &.flex-wrap {
-    @include flex_flex-wrap(wrap);
-  }
-
-}
-
-.react-flex-view.react-flex-cell {
-  @include flex_justify-content(space-between);
-  @include flex_align-content(space-between);
 }
