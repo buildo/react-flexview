@@ -179,7 +179,7 @@ or also:
 </FlexView>
 ```
 
-These examples are the perfect display that with the correct combined usage of grow, shrink and basis you can almost always produce the desired effect!
+These examples are the perfect display that with the correct combined usage of `grow`, `shrink` and `basis` you can almost always produce the desired effect!
 
 **NB: when using grow together with a percentage basis  and `shrink={true}`, if that percentage can’t be easily reached (because of siblings), the strength of a FlexView will be ENTIRELY caused by its grow value.**
 
