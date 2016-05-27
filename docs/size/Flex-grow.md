@@ -4,7 +4,7 @@ Sidebars... have you ever tried to create a layout with two sidebars (one on the
 This is how you would have probably done it:
 
 
-```html
+```jsx
 <div id='app'>
   <div id='left-sidebar' />
   <div id='content' />
@@ -12,7 +12,7 @@ This is how you would have probably done it:
 </div>
 ```
 
-```css
+```sass
 #app {
   width: 100%;
   height: 100%;
@@ -112,7 +112,7 @@ stronger has twice the grow power of weaker so we can easily predict that it wil
 →weaker will have a computed width of 33.33...%
 →stronger will have a computed width of 66.66...%
 
-```
+```jsx
 // both grow and base size
 <FlexView>
   <FlexView id='weaker?' grow={1}>

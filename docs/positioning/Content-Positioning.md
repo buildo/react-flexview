@@ -17,7 +17,9 @@ This is how you used to center a `div` inside another `div`:
 <div>
   <div style={{ margin: '0 auto' }}/>
 </div>
+```
 
+```jsx
 // horizontally (damn! Venus, Mars and the Moon are aligned...again!)
 <div style={{ position: 'relative' }}>
   <div style={{ position: 'absolute', width: 100, left: '50%', margin-left: -50 }}/>
@@ -80,6 +82,7 @@ With `FlexView` we can finally align content in an intuitive, easy and reliable 
 <FlexView vAlignContent='bottom'>
   <div />
 </FlexView>
+```
 
 ```jsx
 // both
@@ -92,7 +95,7 @@ With `FlexView` we can finally align content in an intuitive, easy and reliable 
 
 As you probably deduced by the examples, both props accept an enum of strings:
 
-- `vAlignContent` → `top`, `center`, `bottom`
-- `hAlignContent` → `left`, `center`, `right`
+- `vAlignContent` → `["top", "center", "bottom"]`
+- `hAlignContent` → `["left", "center", "right"]`
 
 Better, right?

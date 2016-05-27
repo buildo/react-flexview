@@ -10,7 +10,7 @@ Let’s start once again by studying how a *div* works.
 </div>
 ```
 
-Our container will have `*height: 50px*`* *and will be large 100% as its a block by default (`display: block`).
+Our container will have `height: 50px` and will be large 100% as its a block by default (`display: block`).
 
 Here’s another (very common) example where we don’t know the size of the content.
 
@@ -25,31 +25,32 @@ Even if the height of the *span* depends on many factors (text length, available
 No need to say, but with *FlexView *things aren’t that easy.
 The size of the container is computed keeping in count other factors:
 
-- Has the container *min-width* and *min-height* set to *auto*?
-- Has the container *basis='auto' *?
+- Has the container `min-width` and `min-height` set to `auto`?
+- Has the container `basis='auto'`?
 - Is everyone (container and contents) shrinkable?
-- Is content growing? (has the container one or more children with *grow={true}*?)
+- Is content growing? (has the container one or more children with `grow={true}`?)
 
 Yes, it’s that complicated! (actually it’s probably more complicated as I’m far from knowing all the possible scenarios)
 
 Let’s analyze each of the above cases.
 
 
-### Has the container `*min-width: auto` and/or `min-height: auto`?
+### Has the container `min-width: auto` and/or `min-height: auto`?
 
 BEWARE: this paragraph is a weird one.
 
 By specifications a *flex* element with `min-width: auto` and `min-height: auto` will have at least its content size.
 
-**NB: `min-height: auto` (`*min-width: auto`) is translated by the browser as `min-height: "my-content-height"` (`min-width: "my-content-width"`)
+**NB: `min-height: auto` (`min-width: auto`) is translated by the browser as `min-height: "my-content-height"` (`min-width: "my-content-width"`)
 **
-Until January 2016 `min-width` and `min-height` treated as _0_ by default.*
+
+Until January 2016 `min-width` and `min-height` treated as _0_ by default.
 
 This obviously (and tragically) changed recently: https://www.chromestatus.com/feature/5651186401148928
 
 To make `FlexView` more stable and predictable (and to keep backward compatibility) we decided to reject this new un-intuitive specification and enforce the old defaults (`min-width: 0`, `min-height: 0`)
 
-**NB: by default `FlexView` has `min-width: 0` and `min-height: 0` (like any `div`)
+**NB: by default `FlexView` has `min-width: 0` and `min-height: 0`** (like any `div`)
 
 You may be wondering: “Does it mean `FlexView` will never have its content size by default?”
 Nope, it actually does by default! Let’s jump to the next section.
@@ -73,7 +74,7 @@ This container will than have its content size just like a `div`:
 Finally some normality!
 
 
-### Is everyone *shrinkable*?**
+### Is everyone *shrinkable*?
 
 In the *size* chapter we saw how a *FlexView* naturally shrinks fo free space for its siblings unless explicitly told not to.
 
@@ -95,7 +96,7 @@ In this example it’s really hard to predict what will happen. (if you’re cur
 
 **We must avoid situations where we can’t predict the final result!**
 
-To achieve the expected result in a situation like that (we want *fat-sibiling → 100px* and *container → 400px*) we should use **`shrink={false}``**.
+To achieve the expected result in a situation like that (we want *fat-sibiling → 100px* and *container → 400px*) we should use **`shrink={false}`**.
 
 ```jsx
 <FlexView width={500}>
@@ -148,6 +149,7 @@ When we talked about `grow` we described it as a magical property which could be
 May I remind you that 100% of 0 is 0? is this arrogant of me? I wonder why this chapter even exists!
 
 …let’s clarify it anyway...
+
 **NB: *`grow={true}`* DOES NOT make its parent growing too!**
 
 Which also means that:
