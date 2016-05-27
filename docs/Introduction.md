@@ -10,7 +10,7 @@ First of all, why `FlexView`
 
 This how you flex without `FlexView`:
 
-```sass
+```scss
 // flex
 display: flexbox;
 display: -webkit-box;
