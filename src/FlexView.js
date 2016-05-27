@@ -168,7 +168,7 @@ export default class FlexView extends React.Component {
   };
 
   getClasses = () => {
-    const direction = this.props.column ? 'flex-column' : 'flex-row';
+    const direction = this.props.column && 'flex-column';
     const contentAlignment = this.getContentAlignmentClasses();
     const wrap = this.props.wrap && 'flex-wrap';
     return cx('react-flex-view', direction, contentAlignment, wrap, this.props.className);
