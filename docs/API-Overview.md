@@ -50,6 +50,7 @@ Name | Type | Description
 **className** | `string` | _optional_. Additional className for wrapper element
 **style** | `object` | _optional_. Inline-style overrides for wrapper element
 
+
 > `FlexView` is a wild stallion. It is strong and fast, but must first be tamed!
 
 (“but wait, this is in contrast with what you said at the beginning of.." - “SHUT UP!”)
