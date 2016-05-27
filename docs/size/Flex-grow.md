@@ -1,6 +1,6 @@
 # `flex-grow`
 
-Sidebars... have you ever tried to create a layout with two sidebars (one on the left and one on the right) with fixed width (let’s say _200px)) and a growing main content in the middle using only `divs` and old style css?
+Sidebars... have you ever tried to create a layout with two sidebars (one on the left and one on the right) with fixed width (let’s say _200px_)) and a growing main content in the middle using only `divs` and old style css?
 This is how you would have probably done it:
 
 

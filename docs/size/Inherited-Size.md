@@ -1,6 +1,6 @@
 # Inherited size (container)
 
-So far we’ve seen how we can manually set the size of a *FlexView *but, as we mostly use *FlexView* as a container, we’re not done until we see how it inherits size from its content.
+So far we’ve seen how we can manually set the size of a *FlexView* but, as we mostly use *FlexView* as a container, we’re not done until we see how it inherits size from its content.
 
 Let’s start once again by studying how a *div* works.
 
@@ -22,7 +22,7 @@ Here’s another (very common) example where we don’t know the size of the con
 
 Even if the height of the *span* depends on many factors (text length, available width, font characteristics…) we can say for sure that the *container* will have the same height of the *span*.
 
-No need to say, but with *FlexView *things aren’t that easy.
+No need to say, but with *FlexView* things aren’t that easy.
 The size of the container is computed keeping in count other factors:
 
 - Has the container `min-width` and `min-height` set to `auto`?
@@ -41,8 +41,7 @@ BEWARE: this paragraph is a weird one.
 
 By specifications a *flex* element with `min-width: auto` and `min-height: auto` will have at least its content size.
 
-**NB: `min-height: auto` (`min-width: auto`) is translated by the browser as `min-height: "my-content-height"` (`min-width: "my-content-width"`)
-**
+**NB: `min-height: auto` (`min-width: auto`) is translated by the browser as `min-height: "my-content-height"` (`min-width: "my-content-width"`)**
 
 Until January 2016 `min-width` and `min-height` treated as _0_ by default.
 

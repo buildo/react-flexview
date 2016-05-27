@@ -35,18 +35,18 @@ Here’s the list of any custom (or manipulated) `FlexView` prop:
 Name | Type | Description
 -----|------|------------
 **column** | `boolean` | _optional_. Flex-direction: column
-**grow** | `union(boolean|number)` | _optional_. Flex-grow property (for parent primary axis)
-**shrink** | `union(boolean|number)` | _optional_. Flex-shrink property
-**basis** | `union(string|number)`| _optional_. Flex-basis property
-**vAlignContent** | `enum('top'|'center'|'bottom')` | _optional_. Align content vertically
-**hAlignContent** | `enum('left'|'center'|'right')` | _optional_. Align content horizontally
-**marginLeft** | `union(string|number)` | _optional_. Margin-left property ("auto" to align self right)
-**marginTop** | `union(string|number)` | _optional_. Margin-top property ("auto" to align self bottom)
-**marginRight** | `union(string|number)` | _optional_. Margin-right property ("auto" to align self left)
-**marginBottom** | `union(string|number)` | _optional_. Margin-bottom property ("auto" to align self top)
+**grow** | `union(boolean,number)` | _optional_. Flex-grow property (for parent primary axis)
+**shrink** | `union(boolean,number)` | _optional_. Flex-shrink property
+**basis** | `union(string,number)`| _optional_. Flex-basis property
+**vAlignContent** | `enum('top','center','bottom')` | _optional_. Align content vertically
+**hAlignContent** | `enum('left','center','right')` | _optional_. Align content horizontally
+**marginLeft** | `union(string,number)` | _optional_. Margin-left property ("auto" to align self right)
+**marginTop** | `union(string,number)` | _optional_. Margin-top property ("auto" to align self bottom)
+**marginRight** | `union(string,number)` | _optional_. Margin-right property ("auto" to align self left)
+**marginBottom** | `union(string,number)` | _optional_. Margin-bottom property ("auto" to align self top)
 **wrap** | `boolean` | _optional_. Wrap content
-**height** | `union(string|number)` | _optional_. Height property (for parent secondary axis)
-**width** | `union(string|number)` | _optional_. Width property (for parent secondary axis)
+**height** | `union(string,number)` | _optional_. Height property (for parent secondary axis)
+**width** | `union(string,number)` | _optional_. Width property (for parent secondary axis)
 **className** | `string` | _optional_. Additional className for wrapper element
 **style** | `object` | _optional_. Inline-style overrides for wrapper element
 
