@@ -1,9 +1,7 @@
 {
   "gitbook": "3.0.3",
   "title": "React FlexView",
-  "structure": {
-    "summary": "docs/README.md"
-  },
+  "root": "docs",
   "plugins": ["edit-link", "prism", "-highlight", "github"],
   "pluginsConfig": {
     "edit-link": {
