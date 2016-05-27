@@ -181,10 +181,10 @@ or also:
 
 These examples are the perfect display that with the correct combined usage of grow, shrink and basis you can almost always produce the desired effect!
 
-NB: when using grow together with a percentage basis  and `shrink={true}`, if that percentage can’t be easily reached (because of siblings), the strength of a FlexView will be ENTIRELY caused by its grow value.
+**NB: when using grow together with a percentage basis  and `shrink={true}`, if that percentage can’t be easily reached (because of siblings), the strength of a FlexView will be ENTIRELY caused by its grow value.**
 
-NB: `shrink={true}` is required as, when setting a custom basis, shrink is false by default
+**NB: `shrink={true}` is required as, when setting a custom basis, shrink is false by default**
 
 This may come in handy when creating grids as we don’t need to know how many cells there will be.
 
-BEWARE: setting basis to a percentage in other situations may cause layout defects! As we’ll see in the the following section basis is by default set to ‘auto' for a very good reason.
+**BEWARE**: setting basis to a percentage in other situations may cause layout defects! As we’ll see in the the following section basis is by default set to ‘auto' for a very good reason.
