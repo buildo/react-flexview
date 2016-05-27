@@ -32,7 +32,7 @@ export default class Component extends React.Component {
 [demo](http://rawgit.com/buildo/react-flexview/master/dev/build/#/)
 
 ## API
-[API](https://paper.dropbox.com/doc/How-to-FlexView-gMIxUHhNX3xtRfrFE4wlK#:h2=API---Let’s-get-serious)
+[API](https://buildo.gitbooks.io/flexview/content/docs/API-Overview.html)
 
 ## Guide
-[blogpost](https://paper.dropbox.com/doc/How-to-FlexView-gMIxUHhNX3xtRfrFE4wlK)
+[gitbook](https://buildo.gitbooks.io/flexview/content/docs/Introduction.html)
