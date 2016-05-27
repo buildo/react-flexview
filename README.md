@@ -33,4 +33,4 @@ export default class Component extends React.Component {
 Here's a [live demo](http://rawgit.com/buildo/react-flexview/master/dev/build/#/)
 
 ## Documentation
-Refer to the [Book of FlexView](https://buildo.gitbooks.io/flexview)
+Refer to the [Book of FlexView](https://buildo.gitbooks.io/flexview/content/docs/Introduction.html)
