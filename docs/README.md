@@ -10,6 +10,6 @@
   - [flex-shrink](/docs/size/Flex-shrink.md)
   - [basis, grow and shrink working together](/docs/size/Basis-Grow-Shrink.md)
   - [Inherited size (container)](/docs/size/Inherited-Size.md)
-- [Positioning](/docs/positioning/README.md)
+- Positioning
   - [Content positioning](/docs/positioning/Content-Positioning.md)
   - [Self positioning](/docs/positioning/Self-Positioning.md)
