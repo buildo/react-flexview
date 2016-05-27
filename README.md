@@ -6,11 +6,13 @@ A React component to abstract over flexbox
 
 ## Hot to use
 In your `app.js`
+
 ```js
 import 'react-flexview/lib/flexView.css' // FlexView is useless without its style
 ```
 
 In your component
+
 ```jsx
 import React from 'react';
 import FlexView from 'react-flexview';
@@ -26,13 +28,9 @@ export default class Component extends React.Component {
 }
 ```
 
-`flexbox` is complex... If you need more help you can read this [blogpost](https://paper.dropbox.com/doc/How-to-FlexView-gMIxUHhNX3xtRfrFE4wlK)
 
 ## Demo
-[demo](http://rawgit.com/buildo/react-flexview/master/dev/build/#/)
+Here's a [live demo](http://rawgit.com/buildo/react-flexview/master/dev/build/#/)
 
-## API
-[API](https://buildo.gitbooks.io/flexview/content/docs/API-Overview.html)
-
-## Guide
-[gitbook](https://buildo.gitbooks.io/flexview/content/docs/Introduction.html)
+## Documentation
+Refer to the [Book of FlexView](https://buildo.gitbooks.io/flexview)
