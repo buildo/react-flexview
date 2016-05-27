@@ -1,0 +1,17 @@
+{
+  "gitbook": "2.4.3",
+  "title": "React FlexView",
+  "structure": {
+    "summary": "docs/README.md"
+  },
+  "plugins": ["edit-link", "prism", "-highlight", "github"],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/buildo/react-flexview/tree/master",
+      "label": "Edit This Page"
+    },
+    "github": {
+      "url": "https://github.com/buildo/react-flexview/"
+    }
+  }
+}
