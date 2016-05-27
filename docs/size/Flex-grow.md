@@ -11,7 +11,7 @@ This is how you would have probably done it:
   <div id='right-sidebar' />
 </div>
 ```
-  
+
 ```css
 #app {
   width: 100%;
@@ -67,7 +67,7 @@ The main content should occupy all the left available space:
 
 Even if `grow` (like the other size props `width`, `height`, `basis`) accepts numbers, you’ll find yourself mostly using it in its boolean form.
 
-When you write `<FlexView grow />` what you’re actually doing is simply setting `flex-grow` the default value for a growing flex element: `flex-grow: 1` 
+When you write `<FlexView grow />` what you’re actually doing is simply setting `flex-grow` the default value for a growing flex element: `flex-grow: 1`
 
 So these two cases are actually equivalent:
 
@@ -99,29 +99,30 @@ The bigger the grow value, the stronger. The bigger the base size, the stronger.
 
 Let’s see a couple of examples
 
-
-    // only grow
-    <FlexView>
-      <FlexView id='weaker' grow={1} />
-      <FlexView id='stronger' grow={2} /> // grow twice as "strong"
-    </FlexView>
+```jsx
+// only grow
+<FlexView>
+  <FlexView id='weaker' grow={1} />
+  <FlexView id='stronger' grow={2} /> // grow twice as "strong"
+</FlexView>
+```
 
 Both FlexView have the same content (they’re both empty!) so they have the same base size. The outcome is therefore limited to the grow value:
 stronger has twice the grow power of weaker so we can easily predict that it will occupy double of the space.
 →weaker will have a computed width of 33.33...%
 →stronger will have a computed width of 66.66...%
 
-
-
-    // both grow and base size
-    <FlexView>
-      <FlexView id='weaker?' grow={1}>
-        {contentTop} // how big are you?
-      </FlexView>
-      <FlexView id='stronger?' grow={2}> // grow twice as "strong"
-        {contentBottom} // how big are you?
-      </FlexView>
-    </FlexView>
+```
+// both grow and base size
+<FlexView>
+  <FlexView id='weaker?' grow={1}>
+    {contentTop} // how big are you?
+  </FlexView>
+  <FlexView id='stronger?' grow={2}> // grow twice as "strong"
+    {contentBottom} // how big are you?
+  </FlexView>
+</FlexView>
+```
 
 Here things get complicated: our FlexViews have different contents. Again we easily see that the second one has a higher grow value  but, as we know nothing about their base size, the outcome is impossible to predict.
 To show you how hard it is let’s say that both contents are divs and that contentTop has `width: 200px` while contentBottom has `width: 100px`. What do you expect? Probably not this:
@@ -135,10 +136,12 @@ The rule of thumb is: we use percentages.
 
 With basis we can definitely set the precise percentage for each FlexView.
 
-    <FlexView>
-      <FlexView id='weaker' basis='40%' />
-      <FlexView id-'stronger' basis='60%' />
-    </FlexView>
+```jsx
+<FlexView>
+  <FlexView id='weaker' basis='40%' />
+  <FlexView id-'stronger' basis='60%' />
+</FlexView>
+```
 
 This would result of course in the expected outcome (40%, 60%) but we’ve just brutally excluded grow from the party! We want a way to use grow while and ignoring the base size.
 
@@ -146,38 +149,41 @@ As it turns out, if you use a percentage basis together with grow  and shrink, t
 
 This means that the two following examples will actually produce the same result:
 
+```jsx
+// only basis
+<FlexView>
+  <FlexView basis='25%' />
+  <FlexView basis='75%' />
+</FlexView>
 
-    // only basis
-    <FlexView>
-      <FlexView basis='25%' />
-      <FlexView basis='75%' />
-    </FlexView>
-    
-    // grow, shrink and basis
-    <FlexView>
-      <FlexView grow={1} shrink basis='100%' />
-      <FlexView grow={3} shrink basis='100%' />
-    </FlexView>
+// grow, shrink and basis
+<FlexView>
+  <FlexView grow={1} shrink basis='100%' />
+  <FlexView grow={3} shrink basis='100%' />
+</FlexView>
+```
 
 or also:
 
-    // only basis, equally sized
-    <FlexView>
-      <FlexView basis='50%' />
-      <FlexView basis='50%' />
-    </FlexView>
-    
-    // shrink and basis
-    <FlexView>
-      <FlexView shrink basis='100%' />
-      <FlexView shrink basis='100%' />
-    </FlexView>
+```jsx
+// only basis, equally sized
+<FlexView>
+  <FlexView basis='50%' />
+  <FlexView basis='50%' />
+</FlexView>
+
+// shrink and basis
+<FlexView>
+  <FlexView shrink basis='100%' />
+  <FlexView shrink basis='100%' />
+</FlexView>
+```
 
 These examples are the perfect display that with the correct combined usage of grow, shrink and basis you can almost always produce the desired effect!
 
-NB: when using grow together with a percentage basis  and shrink={true}, if that percentage can’t be easily reached (because of siblings), the strength of a FlexView will be ENTIRELY caused by its grow value.
+NB: when using grow together with a percentage basis  and `shrink={true}`, if that percentage can’t be easily reached (because of siblings), the strength of a FlexView will be ENTIRELY caused by its grow value.
 
-NB: shrink={true} is required as, when setting a custom basis, shrink is false by default
+NB: `shrink={true}` is required as, when setting a custom basis, shrink is false by default
 
 This may come in handy when creating grids as we don’t need to know how many cells there will be.
 

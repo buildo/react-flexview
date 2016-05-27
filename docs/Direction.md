@@ -11,5 +11,3 @@ With flexbox we can finally achieve this in a much easier and more intuitive way
 <FlexView /> // this is a row
 <FlexView column /> // this is a column
 ```
-
-***{PREVIEW HERE}***

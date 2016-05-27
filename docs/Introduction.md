@@ -10,7 +10,7 @@ First of all, why `FlexView`
 
 This how you flex without `FlexView`:
 
-```css
+```sass
 // flex
 display: flexbox;
 display: -webkit-box;
@@ -36,7 +36,7 @@ flex: 1 1 200px;
 
 And this is how you flex with `FlexView`:
 
-```html
+```jsx
 <FlexView grow shrink basis='200' />
 ```
 

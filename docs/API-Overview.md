@@ -12,14 +12,14 @@
 - ... https://facebook.github.io/react/docs/tags-and-attributes.html
 
 
-```html
+```jsx
 <div className='div-forever'>
   <span>Name me one thing you can't do with a div</span>
   <span>div rulez!</span>
 </div>
 ```
 
-```html
+```jsx
 <FlexView className='welcome-to-2016'>
   <span>SHUT UP!</span>
   <span>PS: Me and my brother span are side by side, and you?</span>
@@ -34,7 +34,7 @@ Here’s the list of any custom (or manipulated) `FlexView` prop:
 
 Name | Type | Description
 -----|------|------------
-**column** | `boolean` | optional. Flex-direction: column
+**column** | `boolean` | _optional_. Flex-direction: column
 **grow** | `union(boolean|number)` | _optional_. Flex-grow property (for parent primary axis)
 **shrink** | `union(boolean|number)` | _optional_. Flex-shrink property
 **basis** | `union(string|number)`| _optional_. Flex-basis property
@@ -87,4 +87,4 @@ Let’s divide them in smaller groups to make it easier to understand their func
 - `className`
 - `style`
 
-In the following chapters we’re going to study each of these groups.
+In the following chapters we’re going to study each group.

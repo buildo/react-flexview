@@ -48,7 +48,7 @@ To set the **cross size** say “welcome back” to **`width`** and **`height`**
 <FlexView column>
   <FlexView basis={50} style={{ width: 50 }} /> // height 50px, width 50px
 </FlexView>
-```jsx
+```
 
 This means that, to properly size a flex element, you **must** know its parent.
 (Is it a `div` or a `FlexView`? Is it a row or a column?)
