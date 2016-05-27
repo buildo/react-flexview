@@ -1,4 +1,4 @@
-## Direction
+# Direction
 
 Positioning elements horizontally inside a `div` has always been absurdly hard.
 (“What about `float`? I made the most incredible things with flo..” - “SHUT UP!”)
