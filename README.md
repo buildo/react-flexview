@@ -1,5 +1,5 @@
 # FlexView
-A react component to abstract over flexbox
+A React component to abstract over flexbox
 
 ## Install
 `npm i --save react-flexview`
