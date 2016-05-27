@@ -4,7 +4,7 @@
   "structure": {
     "summary": "docs/README.md"
   },
-  "plugins": ["edit-link", "prism", "-highlight", "github"],
+  "plugins": ["edit-link", "prism", "-highlight", "github", "styles-sass"],
   "pluginsConfig": {
     "edit-link": {
       "base": "https://github.com/buildo/react-flexview/tree/master",
