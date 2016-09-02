@@ -21,7 +21,7 @@ export default {
       {
         test: /\.jsx?$/,
         loaders: ['babel'],
-        include: [paths.SRC, paths.DEV, /buildo-react-components/]
+        include: [paths.SRC, paths.DEV]
       }
     ],
     preLoaders: [
