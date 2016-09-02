@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import t from 'tcomb';
 import { Route, create } from 'react-router';
 import { find, includes, pick } from 'lodash';
-import KitchenSink from 'buildo-react-components/src/kitchen-sink';
+import KitchenSink from 'buildo-react-components/lib/kitchen-sink';
 import sections from './examples/index.js';
 import FlexView from '../src';
 
-
+import './examples.scss';
 import '../src/flexView.scss';
 
 /* KitchenSink styles */

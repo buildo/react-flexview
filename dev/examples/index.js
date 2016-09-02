@@ -9,7 +9,7 @@ function dynamicRequire(e) {
 
 const components = json.components.map(c => ({
   ...c,
-  examples: c.examples.map(dynamicRequire)
+  examples: c.examples.map(e => ({ code: dynamicRequire(e) }))
 }));
 
 export default [{ ...json, components }];
