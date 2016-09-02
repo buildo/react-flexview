@@ -1,6 +1,6 @@
 {
   "name": "react-flexview",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A react component to abstract over flexbox",
   "main": "index.js",
   "scripts": {
