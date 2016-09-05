@@ -2,8 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
-import t from 'tcomb';
-import { props } from 'tcomb-react';
+import { t, props } from 'tcomb-react';
 
 
 export const Props = {
