@@ -2,7 +2,9 @@
 A React component to abstract over flexbox
 
 ## Install
-`npm i --save react-flexview`
+```
+npm i --save react-flexview
+```
 
 ## Hot to use
 In your `app.js`
