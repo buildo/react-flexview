@@ -33,7 +33,7 @@ export const Props = {
  * @param marginTop - margin-top property ("auto" to align self bottom)
  * @param marginRight - margin-right property ("auto" to align self left)
  * @param marginBottom - margin-bottom property ("auto" to align self top)
- * @param flex-grow property (for parent primary axis)
+ * @param grow property (for parent primary axis)
  * @param shrink - flex-shrink property
  * @param basis - flex-basis property
  * @param wrap - wrap content
