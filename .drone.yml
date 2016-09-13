@@ -1,16 +1,18 @@
 build:
   lint-and-test:
-    image: quay.io/buildo/node5-npm3
+    image: node:5
     environment:
       - NPM_CONFIG_CACHE=/drone/.npm
+      - NPM_CONFIG_LOGLEVEL=warn
     commands:
       - npm i
       - npm run lint
       - npm test
 
   generate-readme:
-    image: quay.io/buildo/node5-npm3
+    image: node:5
     commands:
+      - git config http.sslVerify "false"
       - npm run generate-readme
       - git add src/README.md
       - if ! git diff-index --quiet HEAD -- src/README.md; then
