@@ -12,7 +12,8 @@
     "prepublish": "npm run build",
     "build-examples": "npm run clean && webpack --config dev/webpack.config.build.babel.js --progress",
     "start": "npm run clean && webpack-dev-server --config dev/webpack.config.babel.js --progress --hot --inline",
-    "clean": "rm -rf dev/build"
+    "clean": "rm -rf dev/build",
+    "generate-readme": "babel-node ./generateReadme.js"
   },
   "repository": {
     "type": "git",
@@ -62,6 +63,7 @@
     "raw-loader": "^0.5.1",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
+    "react-readme-generator": "0.0.1",
     "react-remarkable": "^1.1.1",
     "react-router": "^0.13.5",
     "react-sidebar": "^2.1.2",
