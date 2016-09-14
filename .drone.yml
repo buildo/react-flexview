@@ -23,6 +23,15 @@ build:
     when:
       branch: master
 
+notify:
+  downstream:
+    repositories:
+      - buildo/react-components
+    token: $$NOTIFY_BRC_TOKEN
+    fork: true
+    when:
+      branch: master
+
 cache:
   mount:
     - /drone/.npm
