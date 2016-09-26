@@ -11,7 +11,7 @@
     "postversion": "git push && git push --tags",
     "prepublish": "npm run build",
     "build-examples": "npm run clean && webpack --config dev/webpack.config.build.babel.js --progress",
-    "start": "npm run clean && webpack-dev-server --config dev/webpack.config.babel.js --progress --hot --inline",
+    "start": "webpack-dev-server --config dev/webpack.config.babel.js --progress --hot --inline",
     "clean": "rm -rf dev/build",
     "generate-readme": "babel-node ./generateReadme.js"
   },
