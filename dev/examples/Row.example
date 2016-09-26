@@ -1,17 +1,16 @@
 class Example extends React.Component {
 
   render = () => (
-    <FlexView className='hello' height={120}>
+    <FlexView className='my-class-name' height={60}>
       <FlexView
-        style={{ backgroundColor: 'red' }}
-        height={30}
+        style={{ backgroundColor: '#D1236D' }}
+        height='50%'
         marginTop='auto'
-        marginBottom='auto'
         basis={200}
       />
       <FlexView
-        style={{ backgroundColor: 'green' }}
-        height={30}
+        style={{ backgroundColor: '#1A91EB' }}
+        height='50%'
         marginLeft='auto'
         basis={200}
       />
