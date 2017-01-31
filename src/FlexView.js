@@ -1,9 +1,29 @@
+// @flow
+
 import React from 'react';
 import cx from 'classnames';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import { t, props } from 'tcomb-react';
 
+export type IProps = {
+  children?: any,
+  column?: boolean,
+  vAlignContent?: 'top' | 'center' | 'bottom',
+  hAlignContent?: 'left' | 'center' | 'right',
+  marginLeft?: string | number,
+  marginTop?: string | number,
+  marginRight?: string | number,
+  marginBottom?: string | number,
+  grow?: boolean | number,
+  shrink?: boolean | number,
+  basis?: string | number,
+  wrap?: boolean,
+  height?: string | number,
+  width?: string | number,
+  className?: string,
+  style?: Object
+};
 
 export const Props = {
   children: t.ReactChildren,
@@ -41,7 +61,7 @@ export const Props = {
  * @param width - width property (for parent secondary axis)
  */
 @props(Props, { strict: false })
-export default class FlexView extends React.Component {
+export default class FlexView extends React.Component<void, IProps, void> {
 
   componentDidMount() {
     this.logWarnings();
@@ -123,13 +143,13 @@ export default class FlexView extends React.Component {
     const vPrefix = this.props.column ? 'justify-content-' : 'align-content-';
     const hPrefix = this.props.column ? 'align-content-' : 'justify-content-';
 
-    const vAlignContentClasses = {
+    const vAlignContentClasses: Object = {
       top: `${vPrefix}start`,
       center: `${vPrefix}center`,
       bottom: `${vPrefix}end`
     };
 
-    const hAlignContentClasses = {
+    const hAlignContentClasses: Object = {
       left: `${hPrefix}start`,
       center: `${hPrefix}center`,
       right: `${hPrefix}end`
@@ -153,7 +173,7 @@ export default class FlexView extends React.Component {
     const style = this.getStyle();
     const props = omit(this.props, Object.keys(Props));
     return (
-      <div className={className} style={style} { ...props }>
+      <div className={className} style={style} {...props}>
         {this.props.children}
       </div>
     );

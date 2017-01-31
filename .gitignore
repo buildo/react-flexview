@@ -1,6 +1,7 @@
 node_modules
 coverage
 npm-debug.log
-lib
 **/.tags
 **/.tags1
+flow-typed/npm
+lib

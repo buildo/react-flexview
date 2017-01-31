@@ -1,0 +1,10 @@
+[include]
+
+[ignore]
+<PROJECT_ROOT>/node_modules/fbjs
+<PROJECT_ROOT>/node_modules/react-addons-test-utils/node_modules/fbjs
+
+[libs]
+
+[options]
+esproposal.decorators=ignore
