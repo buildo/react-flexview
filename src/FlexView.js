@@ -47,15 +47,15 @@ export default class FlexView extends React.Component {
     this.logWarnings();
   }
 
-  logWarnings = () => {
+  logWarnings() {
     if (process.env.NODE_ENV !== 'production' && this.props.basis === 'auto') {
       console.warn( // eslint-disable-line no-console
         'basis is "auto" by default: forcing it to "auto"  will leave "shrink:true" as default'
       );
     }
-  };
+  }
 
-  getGrow = () => {
+  getGrow() {
     const { grow } = this.props;
     if (typeof grow === 'number') {
       return grow;
@@ -64,9 +64,9 @@ export default class FlexView extends React.Component {
     }
 
     return 0; // default
-  };
+  }
 
-  getShrink = () => {
+  getShrink() {
     const { shrink, basis } = this.props;
     if (typeof shrink === 'number') {
       return shrink;
@@ -81,9 +81,9 @@ export default class FlexView extends React.Component {
     }
 
     return 1; // default
-  };
+  }
 
-  getBasis = () => {
+  getBasis() {
     const { basis } = this.props;
     if (basis) {
       const suffix = t.Number.is(basis) || String(parseInt(basis, 10)) === basis ? 'px' : '';
@@ -91,9 +91,9 @@ export default class FlexView extends React.Component {
     }
 
     return 'auto'; // default
-  };
+  }
 
-  getFlexStyle = () => {
+  getFlexStyle() {
     const grow = this.getGrow();
     const shrink = this.getShrink();
     const basis = this.getBasis();
@@ -105,9 +105,9 @@ export default class FlexView extends React.Component {
       WebkitFlex: values,
       flex: values
     };
-  };
+  }
 
-  getStyle = () => {
+  getStyle() {
     const style = pick(this.props, [
       'width',
       'height',
@@ -117,9 +117,9 @@ export default class FlexView extends React.Component {
       'marginBottom'
     ]);
     return { ...this.getFlexStyle(), ...style, ...this.props.style };
-  };
+  }
 
-  getContentAlignmentClasses = () => {
+  getContentAlignmentClasses() {
     const vPrefix = this.props.column ? 'justify-content-' : 'align-content-';
     const hPrefix = this.props.column ? 'align-content-' : 'justify-content-';
 
@@ -139,14 +139,14 @@ export default class FlexView extends React.Component {
     const hAlignContent = hAlignContentClasses[this.props.hAlignContent];
 
     return cx(vAlignContent, hAlignContent);
-  };
+  }
 
-  getClasses = () => {
+  getClasses() {
     const direction = this.props.column && 'flex-column';
     const contentAlignment = this.getContentAlignmentClasses();
     const wrap = this.props.wrap && 'flex-wrap';
     return cx('react-flex-view', direction, contentAlignment, wrap, this.props.className);
-  };
+  }
 
   render() {
     const className = this.getClasses();
