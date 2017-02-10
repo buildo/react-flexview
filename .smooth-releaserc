@@ -1,0 +1,14 @@
+{
+  "github": {
+    "changelog": {
+      "ignoredLabels": ["DX", "invalid", "discussion", "discarded", "question", "duplicate"]
+    }
+  },
+  "tasks": {
+    "validations": true,
+    "npm-publish": true,
+    "npm-version": true,
+    "gh-release": true,
+    "changelog": true
+  }
+}
