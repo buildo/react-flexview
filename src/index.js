@@ -1,1 +1,3 @@
-export default from './FlexView';
+// @flow
+import FlexView from './FlexView';
+export default FlexView;
