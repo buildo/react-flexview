@@ -1,12 +1,13 @@
 #  Change Log
 
-## [Unreleased](https://github.com/buildo/react-flexview/tree/HEAD)
-[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.1...HEAD)
+
+
+## [v1.0.2](https://github.com/buildo/react-flexview/tree/v1.0.2) (2017-02-10)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.1...v1.0.2)
 
 #### New features:
 
 - add Flow/TypeScript support [#15](https://github.com/buildo/react-flexview/issues/15)
-- investigate sass-flex-mixin lib [#2](https://github.com/buildo/react-flexview/issues/2)
 
 #### Fixes (bugs & defects):
 
