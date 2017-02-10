@@ -5,6 +5,7 @@
   "files": [
     "lib",
     "src",
+    "dev",
     "react-flexview.d.ts"
   ],
   "main": "lib/index.js",
