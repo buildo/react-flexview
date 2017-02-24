@@ -2,6 +2,9 @@
 
 
 
+## [v1.0.3](https://github.com/buildo/react-flexview/tree/v1.0.3) (2017-02-24)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.2...v1.0.3)
+
 ## [v1.0.2](https://github.com/buildo/react-flexview/tree/v1.0.2) (2017-02-10)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.1...v1.0.2)
 
