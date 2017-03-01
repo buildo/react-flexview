@@ -1,11 +1,9 @@
-import fs from 'fs';
 import path from 'path';
-
-export const indexHtml = fs.readFileSync(path.resolve(__dirname, './index.html'), 'utf8');
 
 export const paths = {
   SRC: path.resolve(__dirname, '../src'),
   ENTRY: path.resolve(__dirname, 'examples.js'),
+  INDEX_HTML: path.resolve(__dirname, 'index.html'),
   BUILD: path.resolve(__dirname, 'build'),
   DEV: path.resolve(__dirname)
 };

@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import CompressionPlugin from 'compression-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import webpackBase, { paths, indexHtml } from './webpack.base.babel';
+import webpackBase, { paths } from './webpack.base.babel';
 
 export default {
   ...webpackBase,
@@ -27,7 +27,7 @@ export default {
     }),
     new CompressionPlugin({ regExp: /\.js$|\.css$/ }),
     new webpack.NoErrorsPlugin(),
-    new HtmlWebpackPlugin({ bundle: true, templateContent: indexHtml }),
+    new HtmlWebpackPlugin({ inject: false, template: paths.INDEX_HTML }),
     new ExtractTextPlugin('style', 'style.[hash].min.css')
   ]
 };

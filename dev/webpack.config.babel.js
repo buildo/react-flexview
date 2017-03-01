@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import webpackBase, { paths, indexHtml } from './webpack.base.babel';
+import webpackBase, { paths } from './webpack.base.babel';
 
 export default {
   ...webpackBase,
@@ -28,7 +28,7 @@ export default {
 
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('development') }),
-    new HtmlWebpackPlugin({ bundle: false, templateContent: indexHtml }),
+    new HtmlWebpackPlugin({ inject: false, template: paths.INDEX_HTML }),
     new ExtractTextPlugin('style', 'style.[hash].min.css')
   ]
 };
