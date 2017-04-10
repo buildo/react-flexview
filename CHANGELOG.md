@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.4](https://github.com/buildo/react-flexview/tree/v1.0.4) (2017-04-10)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.3...v1.0.4)
+
+#### New features:
+
+- add warning if grow={true} and shrink={false} [#21](https://github.com/buildo/react-flexview/issues/21)
+
 ## [v1.0.3](https://github.com/buildo/react-flexview/tree/v1.0.3) (2017-02-24)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.2...v1.0.3)
 
