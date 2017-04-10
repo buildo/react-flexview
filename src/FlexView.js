@@ -6,6 +6,12 @@ import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import { t, props } from 'tcomb-react';
 
+function warn(warning: string): void {
+  if (process.env.NODE_ENV !== 'production') {
+    console.warn(warning); // eslint-disable-line no-console
+  }
+}
+
 export type IProps = {
   children?: any,
   column?: boolean,
@@ -68,10 +74,17 @@ export default class FlexView extends React.Component<void, IProps, void> {
   }
 
   logWarnings() {
-    if (process.env.NODE_ENV !== 'production' && this.props.basis === 'auto') {
-      console.warn( // eslint-disable-line no-console
-        'basis is "auto" by default: forcing it to "auto"  will leave "shrink:true" as default'
-      );
+    const { basis, shrink, grow } = this.props;
+
+    if (basis === 'auto') {
+      warn('basis is "auto" by default: forcing it to "auto"  will leave "shrink:true" as default');
+    }
+
+    if (
+      shrink === false || shrink === 0 &&
+      grow === true || (typeof grow === 'number' && grow > 0)
+    ) {
+      warn('passing both "grow" and "shrink={false}" is a no-op!');
     }
   }
 
