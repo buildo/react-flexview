@@ -81,8 +81,8 @@ export default class FlexView extends React.Component<void, IProps, void> {
     }
 
     if (
-      shrink === false || shrink === 0 &&
-      grow === true || (typeof grow === 'number' && grow > 0)
+      (shrink === false || shrink === 0) &&
+      (grow === true || (typeof grow === 'number' && grow > 0))
     ) {
       warn('passing both "grow" and "shrink={false}" is a no-op!');
     }
