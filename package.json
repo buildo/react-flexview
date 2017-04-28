@@ -16,7 +16,7 @@
     "lint": "scriptoni lint src dev/examples.js dev/examples",
     "lint-fix": "scriptoni lint --fix src dev/examples.js dev/examples",
     "lint-style": "scriptoni lint-style",
-    "lint-style-fix": "scriptoni lint-style-fix",
+    "lint-style-fix": "scriptoni stylefmt",
     "preversion": "npm run lint && npm run test && npm run build-examples",
     "postversion": "git push && git push --tags",
     "prepublish": "npm run build",
