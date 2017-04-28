@@ -5,3 +5,4 @@ npm-debug.log
 **/.tags1
 flow-typed/npm
 lib
+.eslintcache
