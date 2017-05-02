@@ -24,7 +24,8 @@
     "start": "webpack-dev-server --config dev/webpack.config.babel.js --progress --hot --inline",
     "clean": "rm -rf dev/build",
     "generate-readme": "babel-node ./generateReadme.js",
-    "release-version": "smooth-release"
+    "release-version": "smooth-release",
+    "flow-check": "flow check"
   },
   "repository": {
     "type": "git",
