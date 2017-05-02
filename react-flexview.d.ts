@@ -19,6 +19,7 @@ export declare type IProps = {
     style?: {
         [key: string]: any;
     };
+    [key: string]: any;
 };
 /** React component to abstract over flexbox
  * @param children - flexView content
