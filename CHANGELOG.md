@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.6](https://github.com/buildo/react-flexview/tree/v1.0.6) (2017-05-03)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.5...v1.0.6)
+
+#### Fixes (bugs & defects):
+
+- Add index signature to props (typescript definition file) [#27](https://github.com/buildo/react-flexview/issues/27)
+
 ## [v1.0.5](https://github.com/buildo/react-flexview/tree/v1.0.5) (2017-04-15)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.4...v1.0.5)
 
