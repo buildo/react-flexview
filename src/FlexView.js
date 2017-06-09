@@ -90,7 +90,9 @@ export default class FlexView extends React.Component<void, IProps, void> {
 
     if (!column && hAlignContent === 'center') {
       const atLeastOneChildHasHMarginAuto = some([].concat(children), child => {
-        const { props, props: { style = {} } } = child;
+        const { props = {} } = child;
+        const { style = {} } = props;
+
         const marginLeft = style.marginLeft || props.marginLeft;
         const marginRight = style.marginRight || props.marginRight;
         return marginLeft === 'auto' && marginRight === 'auto';
@@ -101,7 +103,11 @@ export default class FlexView extends React.Component<void, IProps, void> {
 
     if (column && vAlignContent === 'center') {
       const atLeastOneChildHasVMarginAuto = some([].concat(children), child => {
-        const { marginTop, marginBottom } = child.props.style || {};
+        const { props = {} } = child;
+        const { style = {} } = props;
+
+        const marginTop = style.marginTop || props.marginTop;
+        const marginBottom = style.marginBottom || props.marginBottom;
         return marginTop === 'auto' && marginBottom === 'auto';
       });
 
