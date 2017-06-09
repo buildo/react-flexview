@@ -14,6 +14,7 @@ export default {
   devtool: 'source-map',
 
   devServer: {
+    host: '0.0.0.0',
     contentBase: paths.BUILD,
     port: '8080'
   },

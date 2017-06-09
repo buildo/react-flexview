@@ -4,6 +4,7 @@ import React from 'react';
 import cx from 'classnames';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
+import some from 'lodash/some';
 import { t, props } from 'tcomb-react';
 
 function warn(warning: string): void {
@@ -74,7 +75,7 @@ export default class FlexView extends React.Component<void, IProps, void> {
   }
 
   logWarnings() {
-    const { basis, shrink, grow } = this.props;
+    const { basis, shrink, grow, hAlignContent, vAlignContent, children, column } = this.props;
 
     if (basis === 'auto') {
       warn('basis is "auto" by default: forcing it to "auto"  will leave "shrink:true" as default');
@@ -85,6 +86,26 @@ export default class FlexView extends React.Component<void, IProps, void> {
       (grow === true || (typeof grow === 'number' && grow > 0))
     ) {
       warn('passing both "grow" and "shrink={false}" is a no-op!');
+    }
+
+    if (!column && hAlignContent === 'center') {
+      const atLeastOneChildHasHMarginAuto = some([].concat(children), child => {
+        const { props, props: { style = {} } } = child;
+        const marginLeft = style.marginLeft || props.marginLeft;
+        const marginRight = style.marginRight || props.marginRight;
+        return marginLeft === 'auto' && marginRight === 'auto';
+      });
+
+      atLeastOneChildHasHMarginAuto && warn('In a row with hAlignContent="center" there should be no child with marginLeft and marginRight set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30');
+    }
+
+    if (column && vAlignContent === 'center') {
+      const atLeastOneChildHasVMarginAuto = some([].concat(children), child => {
+        const { marginTop, marginBottom } = child.props.style || {};
+        return marginTop === 'auto' && marginBottom === 'auto';
+      });
+
+      atLeastOneChildHasVMarginAuto && warn('In a column with vAlignContent="center" there should be no child with marginTop and marginBottom set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30');
     }
   }
 

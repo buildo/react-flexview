@@ -1,3 +1,6 @@
 {
-  "extends": "./node_modules/scriptoni/lib/scripts/eslint/eslintrc.json"
+  "extends": "./node_modules/scriptoni/lib/scripts/eslint/eslintrc.json",
+  "rules": {
+    "max-len": 0
+  }
 }
