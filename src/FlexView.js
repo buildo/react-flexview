@@ -89,23 +89,23 @@ export default class FlexView extends React.Component<void, IProps, void> {
     }
 
     if (!column && hAlignContent === 'center') {
-      const atLeastOnChildrenHasHMarginAuto = some([].concat(children), child => {
+      const atLeastOneChildHasHMarginAuto = some([].concat(children), child => {
         const { props, props: { style = {} } } = child;
         const marginLeft = style.marginLeft || props.marginLeft;
         const marginRight = style.marginRight || props.marginRight;
         return marginLeft === 'auto' && marginRight === 'auto';
       });
 
-      atLeastOnChildrenHasHMarginAuto && warn('In a row with hAlignContent="center" there should be no child with marginLeft and marginRight set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30');
+      atLeastOneChildHasHMarginAuto && warn('In a row with hAlignContent="center" there should be no child with marginLeft and marginRight set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30');
     }
 
     if (column && vAlignContent === 'center') {
-      const atLeastOnChildrenHasHMarginAuto = some([].concat(children), child => {
+      const atLeastOneChildHasVMarginAuto = some([].concat(children), child => {
         const { marginTop, marginBottom } = child.props.style || {};
         return marginTop === 'auto' && marginBottom === 'auto';
       });
 
-      atLeastOnChildrenHasHMarginAuto && warn('In a column with vAlignContent="center" there should be no child with marginTop and marginBottom set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30');
+      atLeastOneChildHasVMarginAuto && warn('In a column with vAlignContent="center" there should be no child with marginTop and marginBottom set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30');
     }
   }
 
