@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.7](https://github.com/buildo/react-flexview/tree/v1.0.7) (2017-06-09)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.6...v1.0.7)
+
+#### Fixes (bugs & defects):
+
+- IE11: `hAlignContent='center'` fails if children use `margin: auto` [#30](https://github.com/buildo/react-flexview/issues/30)
+
 ## [v1.0.6](https://github.com/buildo/react-flexview/tree/v1.0.6) (2017-05-03)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.5...v1.0.6)
 
