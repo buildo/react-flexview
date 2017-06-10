@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.8](https://github.com/buildo/react-flexview/tree/v1.0.8) (2017-06-10)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.7...v1.0.8)
+
+#### Fixes (bugs & defects):
+
+- #30 breaks brc :( [#32](https://github.com/buildo/react-flexview/issues/32)
+
 ## [v1.0.7](https://github.com/buildo/react-flexview/tree/v1.0.7) (2017-06-09)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.6...v1.0.7)
 
