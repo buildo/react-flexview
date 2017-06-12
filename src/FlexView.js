@@ -7,10 +7,8 @@ import omit from 'lodash/omit';
 import some from 'lodash/some';
 import { t, props } from 'tcomb-react';
 
-const IS_DEV = process.env.NODE_ENV !== 'production';
-
 function warn(warning: string): void {
-  if (IS_DEV) {
+  if (process.env.NODE_ENV !== 'production') {
     console.warn(warning); // eslint-disable-line no-console
   }
 }
@@ -90,7 +88,7 @@ export default class FlexView extends React.Component<void, IProps, void> {
       warn('passing both "grow" and "shrink={false}" is a no-op!');
     }
 
-    if (IS_DEV && !t.Nil.is(children) && !column && hAlignContent === 'center') {
+    if (process.env.NODE_ENV !== 'production' && !t.Nil.is(children) && !column && hAlignContent === 'center') {
       const atLeastOneChildHasHMarginAuto = some([].concat(children), child => {
         const { props = {} } = child;
         const { style = {} } = props;
@@ -103,7 +101,7 @@ export default class FlexView extends React.Component<void, IProps, void> {
       atLeastOneChildHasHMarginAuto && warn('In a row with hAlignContent="center" there should be no child with marginLeft and marginRight set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30');
     }
 
-    if (IS_DEV && !t.Nil.is(children) && column && vAlignContent === 'center') {
+    if (process.env.NODE_ENV !== 'production' && !t.Nil.is(children) && column && vAlignContent === 'center') {
       const atLeastOneChildHasVMarginAuto = some([].concat(children), child => {
         const { props = {} } = child;
         const { style = {} } = props;
