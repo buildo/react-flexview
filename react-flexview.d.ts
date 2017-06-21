@@ -19,6 +19,7 @@ export declare interface IProps extends Pick<React.HTMLProps<HTMLDivElement>, HT
   wrap?: boolean;
   height?: string | number;
   width?: string | number;
+  ref?: string | ((instance: HTMLDivElement) => any);
 }
 /** React component to abstract over flexbox
  * @param children - flexView content
