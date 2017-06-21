@@ -90,7 +90,7 @@ export default class FlexView extends React.Component<void, IProps, void> {
 
     if (process.env.NODE_ENV !== 'production' && !t.Nil.is(children) && !column && hAlignContent === 'center') {
       const atLeastOneChildHasHMarginAuto = some([].concat(children), child => {
-        const { props = {} } = child;
+        const { props = {} } = t.Object.is(child) ? child : {};
         const { style = {} } = props;
 
         const marginLeft = style.marginLeft || props.marginLeft;
