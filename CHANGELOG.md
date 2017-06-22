@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.12](https://github.com/buildo/react-flexview/tree/v1.0.12) (2017-06-22)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.11...v1.0.12)
+
+#### Fixes (bugs & defects):
+
+- one more problem with logWarnings accessing undefined `child.props` [#43](https://github.com/buildo/react-flexview/issues/43)
+
 ## [v1.0.11](https://github.com/buildo/react-flexview/tree/v1.0.11) (2017-06-22)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.10...v1.0.11)
 
