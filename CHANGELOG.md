@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.13](https://github.com/buildo/react-flexview/tree/v1.0.13) (2017-07-04)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.12...v1.0.13)
+
+#### New features:
+
+- Update reactr-flexview.d.ts file for @types/react@15.0.34 compatibility [#45](https://github.com/buildo/react-flexview/issues/45)
+
 ## [v1.0.12](https://github.com/buildo/react-flexview/tree/v1.0.12) (2017-06-22)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.11...v1.0.12)
 
