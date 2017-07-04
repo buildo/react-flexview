@@ -44,6 +44,7 @@
   },
   "homepage": "https://github.com/buildo/react-flexview",
   "dependencies": {
+    "@types/react": "^15.0.34",
     "classnames": "^2.2.5",
     "lodash": "^4.15.0",
     "sass-flex-mixins": "^0.1.0",
