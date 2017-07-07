@@ -1,6 +1,6 @@
 # Introduction
 
-> `FlexView`  is a loyal and friendly React component to work with `flex` in an easier, standard and more reliable way. Welcome to 2016!
+> `FlexView`  is a loyal and friendly React component to work with `flex` in an easier, standard and more reliable way. Welcome to 2017!
 
 Still, we’re talking about flex… easy, standard and reliable may not be fully true!
 Therefore, may I present to you ladies and gentlemen the greatest guide for FlexView ever made!(and first one, and only one…probably also the last one)
