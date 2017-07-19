@@ -1,17 +1,14 @@
 {
-  "gitbook": "2.5.0",
-  "title": "React FlexView",
-  "structure": {
-    "summary": "docs/README.md"
-  },
+  "root": "docs",
+  "gitbook": ">= 3.0.0",
   "plugins": ["edit-link", "prism", "-highlight", "github"],
   "pluginsConfig": {
     "edit-link": {
-      "base": "https://github.com/buildo/react-flexview/tree/master",
+      "base": "https://github.com/buildo/react-flexview/edit/master/book",
       "label": "Edit This Page"
     },
     "github": {
-      "url": "https://github.com/buildo/react-flexview/"
+      "url": "https://github.com/react-flexview/book/"
     }
   }
 }
