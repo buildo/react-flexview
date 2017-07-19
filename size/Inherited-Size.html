@@ -1,0 +1,485 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Inherited size (container) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Basis-Grow-Shrink.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../API-Overview.html">
+            
+                <a href="../API-Overview.html">
+            
+                    
+                    API Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Direction.html">
+            
+                <a href="../Direction.html">
+            
+                    
+                    Direction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Size
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Width-Height-Flex-basis.html">
+            
+                <a href="Width-Height-Flex-basis.html">
+            
+                    
+                    width, height and flex-basis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Flex-grow.html">
+            
+                <a href="Flex-grow.html">
+            
+                    
+                    flex-grow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Flex-shrink.html">
+            
+                <a href="Flex-shrink.html">
+            
+                    
+                    flex-shrink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Basis-Grow-Shrink.html">
+            
+                <a href="Basis-Grow-Shrink.html">
+            
+                    
+                    basis, grow and shrink working together
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="Inherited-Size.html">
+            
+                <a href="Inherited-Size.html">
+            
+                    
+                    Inherited size (container)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Positioning
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../positioning/Content-Positioning.html">
+            
+                <a href="../positioning/Content-Positioning.html">
+            
+                    
+                    Content positioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../positioning/Self-Positioning.html">
+            
+                <a href="../positioning/Self-Positioning.html">
+            
+                    
+                    Self positioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Inherited size (container)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="inherited-size-container">Inherited size (container)</h1>
+<p>So far we&#x2019;ve seen how we can manually set the size of a <em>FlexView</em> but, as we mostly use <em>FlexView</em> as a container, we&#x2019;re not done until we see how it inherits size from its content.</p>
+<p>Let&#x2019;s start once again by studying how a <em>div</em> works.</p>
+<pre class="language-"><code class="lang-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>container<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> height<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Our container will have <code>height: 50px</code> and will be large 100% as its a block by default (<code>display: block</code>).</p>
+<p>Here&#x2019;s another (very common) example where we don&#x2019;t know the size of the content.</p>
+<pre class="language-"><code class="lang-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>container<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>someText<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Even if the height of the <em>span</em> depends on many factors (text length, available width, font characteristics&#x2026;) we can say for sure that the <em>container</em> will have the same height of the <em>span</em>.</p>
+<p>No need to say, but with <em>FlexView</em> things aren&#x2019;t that easy.
+The size of the container is computed keeping in count other factors:</p>
+<ul>
+<li>Has the container <code>min-width</code> and <code>min-height</code> set to <code>auto</code>?</li>
+<li>Has the container <code>basis=&apos;auto&apos;</code>?</li>
+<li>Is everyone (container and contents) shrinkable?</li>
+<li>Is content growing? (has the container one or more children with <code>grow={true}</code>?)</li>
+</ul>
+<p>Yes, it&#x2019;s that complicated! (actually it&#x2019;s probably more complicated as I&#x2019;m far from knowing all the possible scenarios)</p>
+<p>Let&#x2019;s analyze each of the above cases.</p>
+<h3 id="has-the-container-min-width-auto-andor-min-height-auto">Has the container <code>min-width: auto</code> and/or <code>min-height: auto</code>?</h3>
+<p>BEWARE: this paragraph is a weird one.</p>
+<p>By specifications a <em>flex</em> element with <code>min-width: auto</code> and <code>min-height: auto</code> will have at least its content size.</p>
+<p><strong>NB: <code>min-height: auto</code> (<code>min-width: auto</code>) is translated by the browser as <code>min-height: &quot;my-content-height&quot;</code> (<code>min-width: &quot;my-content-width&quot;</code>)</strong></p>
+<p>Until January 2016 <code>min-width</code> and <code>min-height</code> treated as <em>0</em> by default.</p>
+<p>This obviously (and tragically) changed recently: <a href="https://www.chromestatus.com/feature/5651186401148928" target="_blank">https://www.chromestatus.com/feature/5651186401148928</a></p>
+<p>To make <code>FlexView</code> more stable and predictable (and to keep backward compatibility) we decided to reject this new un-intuitive specification and enforce the old defaults (<code>min-width: 0</code>, <code>min-height: 0</code>)</p>
+<p><strong>NB: by default <code>FlexView</code> has <code>min-width: 0</code> and <code>min-height: 0</code></strong> (like any <code>div</code>)</p>
+<p>You may be wondering: &#x201C;Does it mean <code>FlexView</code> will never have its content size by default?&#x201D;
+Nope, it actually does by default! Let&#x2019;s jump to the next section.</p>
+<h3 id="has-the-container-basisauto">Has the container <code>basis=&apos;auto&apos;</code>?</h3>
+<p>What we said about <code>min-width</code> and <code>min-height</code> is valid for <code>flex-basis</code> too!
+(Remeber: <code>FlexView</code> has <code>basis=&apos;auto&apos;</code> by default)</p>
+<p><strong>NB: a <code>FlexView</code> with <code>basis=&apos;auto&apos;</code> will <em>(try to)</em> have its content size</strong></p>
+<p>This container will than have its content size just like a <code>div</code>:</p>
+<pre class="language-"><code class="lang-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>someText<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Finally some normality!</p>
+<h3 id="is-everyone-shrinkable">Is everyone <em>shrinkable</em>?</h3>
+<p>In the <em>size</em> chapter we saw how a <em>FlexView</em> naturally shrinks fo free space for its siblings unless explicitly told not to.</p>
+<p>This rule is still true:</p>
+<pre class="language-"><code class="lang-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>fat-sibling<span class="token punctuation">&apos;</span></span> <span class="token attr-name">grow</span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>container<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> width<span class="token punctuation">:</span> <span class="token number">400</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p><em>container</em> has <code>basis: &apos;auto&apos;</code> so it should have its content size (<code>width: 500px</code>).
+This would be true if it there wasn&#x2019;t an aggressive <em>fat-sibling</em> trying to grow indefinitely!</p>
+<p>In this example it&#x2019;s really hard to predict what will happen. (if you&#x2019;re curios the result on Chrome48 is <em>fat-sibiling &#x2192; 277.784px</em> and <em>container &#x2192; 222.216px</em>)</p>
+<p><strong>We must avoid situations where we can&#x2019;t predict the final result!</strong></p>
+<p>To achieve the expected result in a situation like that (we want <em>fat-sibiling &#x2192; 100px</em> and <em>container &#x2192; 400px</em>) we should use <strong><code>shrink={false}</code></strong>.</p>
+<pre class="language-"><code class="lang-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>fat-sibling<span class="token punctuation">&apos;</span></span> <span class="token attr-name">grow</span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>container<span class="token punctuation">&apos;</span></span> <span class="token attr-name">shrink</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token boolean">false</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment" spellcheck="true">// don&apos;t you dare shrinking!</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> width<span class="token punctuation">:</span> <span class="token number">400</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>As you can see <code>shrink={false}</code> helps us understanding the result by setting a clear and intuitive constraint: you don&#x2019;t shrink, no matter what!</p>
+<p>This works also for nested containers:</p>
+<pre class="language-"><code class="lang-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>fat-sibling<span class="token punctuation">&apos;</span></span> <span class="token attr-name">grow</span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>container<span class="token punctuation">&apos;</span></span> <span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>not-shrinkable-container<span class="token punctuation">&apos;</span></span> <span class="token attr-name">shrink</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token boolean">false</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> width<span class="token punctuation">:</span> <span class="token number">400</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p><em>not-shrinkable-container</em> has <code>basis: auto</code>
+&#x2192; it tries to have its content size
+<em>not-shrinkable-container </em>is also not allowed to shrink (remember: <strong>no matter what!</strong>)
+&#x2192; it <strong>will have </strong>its content size (<code>width: 400px</code>)</p>
+<p><em>container</em> has <code>basis: auto</code> too
+&#x2192; it tries to have its content size
+its content is <em>not-shrinkable-container</em> which <strong>must</strong> have <code>width: 400px</code>
+&#x2192; it will have <code>width: 400px</code></p>
+<p><em>fat-sibling</em> has <code>grow={true}</code>
+&#x2192; it tries to occupy all the space
+<em>fat-sibling</em> is (unfortunately for it) shrinkable
+&#x2192; it<strong> </strong>will occupy <strong>only the available space</strong>
+&#x2192; it will have <code>width: 100px</code></p>
+<h3 id="is-the-content-growing">Is the content <em>growing</em>?</h3>
+<p>There&#x2019;s only one case left: what happens if a <code>FlexView</code> with a sizeless parent has <code>grow={true}</code>?
+When we talked about <code>grow</code> we described it as a magical property which could be translated to
+<strong><code>width: 100%</code> - (all the others).</strong></p>
+<p>May I remind you that 100% of 0 is 0? is this arrogant of me? I wonder why this chapter even exists!</p>
+<p>&#x2026;let&#x2019;s clarify it anyway...</p>
+<p><strong>NB: <em><code>grow={true}</code></em> DOES NOT make its parent growing too!</strong></p>
+<p>Which also means that:</p>
+<p><strong>NB: If you want a <code>FlexView</code> to grow you MUST pass <em><code>grow={true}</code></em> to EVERY parent/grandparent!</strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Basis-Grow-Shrink.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: basis, grow and shrink working together">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Inherited size (container)","level":"1.4.5","depth":2,"next":{"title":"Positioning","level":"1.5","depth":1,"ref":"","articles":[{"title":"Content positioning","level":"1.5.1","depth":2,"path":"positioning/Content-Positioning.md","ref":"positioning/Content-Positioning.md","articles":[]},{"title":"Self positioning","level":"1.5.2","depth":2,"path":"positioning/Self-Positioning.md","ref":"positioning/Self-Positioning.md","articles":[]}]},"previous":{"title":"basis, grow and shrink working together","level":"1.4.4","depth":2,"path":"size/Basis-Grow-Shrink.md","ref":"size/Basis-Grow-Shrink.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/buildo/react-flexview/edit/master/book"},"github":{"url":"https://github.com/react-flexview/book/"},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":">= 3.0.0"},"file":{"path":"size/Inherited-Size.md","mtime":"2017-07-19T08:33:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-19T08:45:36.725Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

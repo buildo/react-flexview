@@ -1,0 +1,462 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Content positioning · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Self-Positioning.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../API-Overview.html">
+            
+                <a href="../API-Overview.html">
+            
+                    
+                    API Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Direction.html">
+            
+                <a href="../Direction.html">
+            
+                    
+                    Direction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../size/">
+            
+                <a href="../size/">
+            
+                    
+                    Size
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../size/Width-Height-Flex-basis.html">
+            
+                <a href="../size/Width-Height-Flex-basis.html">
+            
+                    
+                    width, height and flex-basis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../size/Flex-grow.html">
+            
+                <a href="../size/Flex-grow.html">
+            
+                    
+                    flex-grow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../size/Flex-shrink.html">
+            
+                <a href="../size/Flex-shrink.html">
+            
+                    
+                    flex-shrink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../size/Basis-Grow-Shrink.html">
+            
+                <a href="../size/Basis-Grow-Shrink.html">
+            
+                    
+                    basis, grow and shrink working together
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../size/Inherited-Size.html">
+            
+                <a href="../size/Inherited-Size.html">
+            
+                    
+                    Inherited size (container)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Positioning
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="Content-Positioning.html">
+            
+                <a href="Content-Positioning.html">
+            
+                    
+                    Content positioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Self-Positioning.html">
+            
+                <a href="Self-Positioning.html">
+            
+                    
+                    Self positioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Content positioning</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="content-positioning">Content positioning</h1>
+<p>We can all agree that <code>row</code> and <code>grow</code> are already enough to make <code>FlexView</code> your new enhanced <code>div</code>, but why stopping there?</p>
+<p>Flashback time!</p>
+<p>Your designer:</p>
+<blockquote>
+<p>&quot;This content should be centered horizontally and vertically&#x201D;</p>
+</blockquote>
+<p>You:</p>
+<blockquote>
+<p>&quot;Oh come on! Where do you think to live? in 2016?&quot;</p>
+</blockquote>
+<p>This is how you used to center a <code>div</code> inside another <code>div</code>:</p>
+<pre class="language-"><code class="lang-jsx"><span class="token comment" spellcheck="true">// horizontally (life is beautiful)</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> margin<span class="token punctuation">:</span> <span class="token string">&apos;0 auto&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<pre class="language-"><code class="lang-jsx"><span class="token comment" spellcheck="true">// horizontally (damn! Venus, Mars and the Moon are aligned...again!)</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> position<span class="token punctuation">:</span> <span class="token string">&apos;relative&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> position<span class="token punctuation">:</span> <span class="token string">&apos;absolute&apos;</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> left<span class="token punctuation">:</span> <span class="token string">&apos;50%&apos;</span><span class="token punctuation">,</span> margin<span class="token operator">-</span>left<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+
+<span class="token comment" spellcheck="true">// vertically</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> display<span class="token punctuation">:</span> <span class="token string">&apos;table-cell&apos;</span><span class="token punctuation">,</span> vertical<span class="token operator">-</span>align<span class="token punctuation">:</span> <span class="token string">&apos;middle&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment" spellcheck="true">// WTF?!</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> display<span class="token punctuation">:</span> <span class="token string">&apos;inline-block&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">/&gt;</span></span> <span class="token comment" spellcheck="true">// Ok, I quit..</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Fast-forward!</p>
+<p>Here we are, this is 2016: time to make that dream come true!</p>
+<p>With <em>flex</em> we can <strong>finally</strong> align content wherever we want. But even if we can, that doesn&#x2019;t mean it&#x2019;s easy!</p>
+<p>Let me introduce you the horrible (and really counterintuitive) API to align content in a <em>flex</em> element with pure CSS:</p>
+<p>Any alignment can be achieved by using the combination of two (absurdly named) properties:
+<strong><code>align-items</code></strong> and <strong><code>justify-content</code></strong>.
+Which of them aligns horizontally and which vertically? The truth is: it depends on the <em>direction</em> of the element! (wait, what?)</p>
+<p><strong>NB: <em><code>justify-content</code></em> works for main-axis while <em><code>align-items</code></em> for the cross-axis</strong></p>
+<p>If that&#x2019;s not enough, this causes another problem: as they may work for both horizontal and vertical alignment how could we use the natural values <em>top</em>, <em>bottom</em>, <em>left</em> and <em>right</em> without confusion?</p>
+<p>The answer is: you can&#x2019;t use them at all! Instead they have been translated to <strong><code>flex-start</code></strong>, <strong><code>center</code></strong> and <strong><code>flex-end</code></strong> so to make them unisex...</p>
+<p>We (everyone) found this API to be confusing and unnecessary complex.
+So we thought: if the source of all evil is the <em>direction</em>, and we know it for sure (<code>FlexView</code> knows if it&#x2019;s a row or a column), can we make a more natural API?</p>
+<p>Luckily, <strong>yes</strong>!</p>
+<p>With <code>FlexView</code> we can finally align content in an intuitive, easy and reliable way: no more astronomical shit alignments, no more <code>align-items</code> and <code>justify-content</code> non-sense.</p>
+<pre class="language-"><code class="lang-jsx"><span class="token comment" spellcheck="true">// horizontal</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">hAlignContent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>left<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">hAlignContent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>center<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">hAlignContent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>right<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<pre class="language-"><code class="lang-jsx"><span class="token comment" spellcheck="true">// vertical</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">vAlignContent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>top<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">vAlignContent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>center<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">vAlignContent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>bottom<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<pre class="language-"><code class="lang-jsx"><span class="token comment" spellcheck="true">// both</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FlexView</span> <span class="token attr-name">hAlignContent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>right<span class="token punctuation">&apos;</span></span> <span class="token attr-name">vAlignContent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>center<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FlexView</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p><strong>NB: you can use <em><code>vAlignContent</code></em> and <em><code>hAlignContent</code></em> to position your content exactly where you want!</strong></p>
+<p>As you probably deduced by the examples, both props accept an enum of strings:</p>
+<ul>
+<li><code>vAlignContent</code> &#x2192; <code>[&quot;top&quot;, &quot;center&quot;, &quot;bottom&quot;]</code></li>
+<li><code>hAlignContent</code> &#x2192; <code>[&quot;left&quot;, &quot;center&quot;, &quot;right&quot;]</code></li>
+</ul>
+<p>Better, right?</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Self-Positioning.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Self positioning">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Content positioning","level":"1.5.1","depth":2,"next":{"title":"Self positioning","level":"1.5.2","depth":2,"path":"positioning/Self-Positioning.md","ref":"positioning/Self-Positioning.md","articles":[]},"previous":{"title":"Positioning","level":"1.5","depth":1,"ref":"","articles":[{"title":"Content positioning","level":"1.5.1","depth":2,"path":"positioning/Content-Positioning.md","ref":"positioning/Content-Positioning.md","articles":[]},{"title":"Self positioning","level":"1.5.2","depth":2,"path":"positioning/Self-Positioning.md","ref":"positioning/Self-Positioning.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/buildo/react-flexview/edit/master/book"},"github":{"url":"https://github.com/react-flexview/book/"},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":">= 3.0.0"},"file":{"path":"positioning/Content-Positioning.md","mtime":"2017-07-19T08:33:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-19T08:45:36.725Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
