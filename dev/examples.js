@@ -55,6 +55,13 @@ class Examples extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    const showCodeButton = document.querySelector('.show-code');
+    if (showCodeButton && showCodeButton.className.indexOf('active') === -1) {
+      showCodeButton.click();
+    }
+  }
+
   render() {
     const {
       props: { query: { componentId, contentId, sectionId } },
