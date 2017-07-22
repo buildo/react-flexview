@@ -14,9 +14,9 @@ For these reasons, we asked ourselves: is there a way to simplify the API and ha
 
 Here's a typical CSS snippet using *flexbox*:
 
-```scss
+```css
 .flex-view {
-  // flex
+  /* flex */
   display: flexbox;
   display: -webkit-box;
   display: -moz-box;
@@ -24,14 +24,14 @@ Here's a typical CSS snippet using *flexbox*:
   display: -webkit-flex;
   display: flex;
 
-  // direction
+  /* direction */
   webkit-box-flex-direction: row;
   moz-box-flex-direction: row;
   ms-flex-direction: row;
   webkit-flex-direction: row;
   flex-direction: row;
 
-  // grow, shrink, basis
+  /* grow, shrink, basis */
   webkit-box-flex: 1 1 200px;
   moz-box-flex: 1 1 200px;
   ms-flex: 1 1 200px;
