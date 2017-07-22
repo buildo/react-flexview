@@ -106,3 +106,12 @@ Here's a [live playground](http://rawgit.com/buildo/react-flexview/master/dev/bu
 
 ## Documentation
 Refer to the [Book of FlexView](http://buildo.github.io/react-flexview/)
+
+## Used By
+At [buildo](https://buildo.io/) we've been using `FlexView` in production in every web application we built since [July 2015](https://github.com/buildo/react-components/pull/7) (it was in a different repo back then).
+
+As of today, `FlexView` has replaced the `div` as the brick of our projects and, thanks to it, our developers can finally build without too much trouble complex layouts that work the same on Chrome, Firefox, Safari and **Internet Explorer 11**.
+
+You can see it in action here:
+- [LexDo.it](https://www.lexdo.it/)
+- [OXWAY](http://app.oxway.co/#/)
