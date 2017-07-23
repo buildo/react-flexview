@@ -18,7 +18,6 @@
     "lint-style": "scriptoni lint-style",
     "lint-style-fix": "scriptoni stylefmt",
     "preversion": "npm run lint && npm run test && npm run build-examples",
-    "postversion": "git push && git push --tags",
     "prepublish": "npm run build",
     "build-examples": "npm run clean && webpack --config dev/webpack.config.build.babel.js --progress",
     "start": "webpack-dev-server --config dev/webpack.config.babel.js --progress --hot --inline",
