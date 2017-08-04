@@ -113,5 +113,6 @@ At [buildo](https://buildo.io/) we've been using `FlexView` in production in eve
 As of today, `FlexView` has replaced the `div` as the brick of our projects and, thanks to it, our developers can finally build without too much trouble complex layouts that work the same on Chrome, Firefox, Safari and **Internet Explorer 11**.
 
 You can see it in action here:
+- [buildo.io](https://buildo.io/)
 - [LexDo.it](https://www.lexdo.it/)
 - [OXWAY](http://app.oxway.co/#/)
