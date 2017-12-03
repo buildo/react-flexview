@@ -10,6 +10,24 @@
 
 #### Row
 ```js
+<FlexView className='my-class-name' height={60}>
+  <FlexView
+    style={{ backgroundColor: '#D1236D' }}
+    height='50%'
+    marginTop='auto'
+    basis={200}
+  />
+  <FlexView
+    style={{ backgroundColor: '#1A91EB' }}
+    height='50%'
+    marginLeft='auto'
+    basis={200}
+  />
+</FlexView>
+```
+
+#### Compute flex
+```js
 class ComputeFlex extends React.Component {
 
   constructor() {
