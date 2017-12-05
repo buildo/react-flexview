@@ -15,37 +15,37 @@ function warn(warning: string): void {
 }
 export namespace FlexView {
   export type Props = ObjectOverwrite<React.HTMLProps<HTMLDivElement>, {
-    /** @param children flexView content */
+    /** FlexView content */
     children?: React.ReactNode,
-    /** @param column flex-direction: column */
+    /** flex-direction: column */
     column?: boolean,
-    /** @param vAlignContent align content vertically */
+    /** align content vertically */
     vAlignContent?: 'top' | 'center' | 'bottom',
-    /** @param hAlignContent align content horizontally */
+    /** align content horizontally */
     hAlignContent?: 'left' | 'center' | 'right',
-    /** @param marginLeft margin-left property ("auto" to align self right) */
+    /** margin-left property ("auto" to align self right) */
     marginLeft?: string | number,
-    /** @param marginTop margin-top property ("auto" to align self bottom) */
+    /** margin-top property ("auto" to align self bottom) */
     marginTop?: string | number,
-    /** @param marginRight margin-right property ("auto" to align self left) */
+    /** margin-right property ("auto" to align self left) */
     marginRight?: string | number,
-    /** @param marginBottom margin-bottom property ("auto" to align self top) */
+    /** margin-bottom property ("auto" to align self top) */
     marginBottom?: string | number,
-    /** @param grow property (for parent primary axis) */
+    /** grow property (for parent primary axis) */
     grow?: boolean | number,
-    /** @param shrink flex-shrink property */
+    /** flex-shrink property */
     shrink?: boolean | number,
-    /** @param basis flex-basis property */
+    /** flex-basis property */
     basis?: string | number,
-    /** @param wrap wrap content */
+    /** wrap content */
     wrap?: boolean,
-    /** @param height height property (for parent secondary axis) */
+    /** height property (for parent secondary axis) */
     height?: string | number,
-    /** @param width width property (for parent secondary axis) */
+    /** width property (for parent secondary axis) */
     width?: string | number,
-    /** @param className class to pass to top level element of the component */
+    /** class to pass to top level element of the component */
     className?: string,
-    /** @param style style object to pass to top level element of the component */
+    /** style object to pass to top level element of the component */
     style?: React.CSSProperties
   }>;
 }
