@@ -26,13 +26,3 @@ Array [
   "index.js",
 ]
 `;
-
-exports[`build renders correctly 1`] = `
-Array [
-  "FlexView.d.ts",
-  "FlexView.js",
-  "flexView.css",
-  "index.d.ts",
-  "index.js",
-]
-`;
