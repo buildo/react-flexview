@@ -2,6 +2,13 @@
 
 
 
+## [v2.0.0](https://github.com/buildo/react-flexview/tree/v2.0.0) (2017-12-05)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.13...v2.0.0)
+
+#### Breaking:
+
+- replace flow with Typescript [#40](https://github.com/buildo/react-flexview/issues/40)
+
 ## [v1.0.13](https://github.com/buildo/react-flexview/tree/v1.0.13) (2017-07-04)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.12...v1.0.13)
 
