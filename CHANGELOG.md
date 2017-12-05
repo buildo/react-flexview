@@ -2,6 +2,13 @@
 
 
 
+## [v2.0.1](https://github.com/buildo/react-flexview/tree/v2.0.1) (2017-12-05)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v2.0.0...v2.0.1)
+
+#### Fixes (bugs & defects):
+
+- Module not found: can't resolve `react-flexview/lib/flexView.css` [#50](https://github.com/buildo/react-flexview/issues/50)
+
 ## [v2.0.0](https://github.com/buildo/react-flexview/tree/v2.0.0) (2017-12-05)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v1.0.13...v2.0.0)
 
