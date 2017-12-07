@@ -2,6 +2,13 @@
 
 
 
+## [v2.0.2](https://github.com/buildo/react-flexview/tree/v2.0.2) (2017-12-07)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v2.0.1...v2.0.2)
+
+#### Fixes (bugs & defects):
+
+- FlexView.Props type annotations are not working in VSCode [#52](https://github.com/buildo/react-flexview/issues/52)
+
 ## [v2.0.1](https://github.com/buildo/react-flexview/tree/v2.0.1) (2017-12-05)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v2.0.0...v2.0.1)
 
