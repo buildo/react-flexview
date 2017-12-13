@@ -10,7 +10,35 @@ npm i --save react-flexview
 The *flexbox* API is powerful but far from being perfect.
 The API is complex and there are still many inconsistencies between browsers that force developers to overuse vendor prefixes and literally do magic tricks to achieve the desired layout.
 
-For these reasons, we asked ourselves: is there a way to simplify the API and handle any browser inconsistency in a single place?
+For these reasons, we asked ourselves: is there a way to simplify the API and handle any browser inconsistency in a single place? Our attempt to answer "yes!" to that question gave birth to `FlexView`.
+
+```jsx
+// flex row
+<FlexView />
+
+// flex column
+<FlexView column />
+
+// grow, shrink and basis
+<FlexView grow shrink basis={100} />
+<FlexView grow={2} shrink={1} basis='auto' />
+<FlexView basis={100} /> // shrink is set to `false` by default so you're certain to a have it `100px` wide/tall
+
+// wrap
+<FlexView wrap />
+```
+
+Remember how difficult it was to center a `div` inside another `div`? *flexbox* definitely improved it, but still having to switch from `align-items` to `justify-content` based on `flex-direction` of the parent is confusing and error prone.
+
+`FlexView` lets you align and center `children` with two intuitive props: `vAlignContent` and `hAlignContent`.
+
+```jsx
+<FlexView hAlignContent='center' vAlignContent='center'>
+  <FlexView>the center of the Earth</FlexView>
+</FlexView>
+```
+
+**Bonus:** `FlexView` handles browser prefixes automatically.
 
 Here's a typical CSS snippet using *flexbox*:
 
@@ -43,18 +71,10 @@ Here's a typical CSS snippet using *flexbox*:
 And this is how you do it with `FlexView`:
 
 ```jsx
-<FlexView grow shrink basis='200' />
+<FlexView grow shrink basis={200} />
 ```
 
 Remember how difficult it was to center a `div` inside another `div`?
-
-`FlexView` let's you align and center `children` with two intuitive props: `vAlignContent` and `hAlignContent`
-
-```jsx
-<FlexView hAlignContent='center' vAlignContent='center'>
-  <FlexView>the center of the Earth</FlexView>
-</FlexView>
-```
 
 ## How to use
 In your `app.js`:
@@ -102,7 +122,7 @@ export default class Component extends React.Component {
 
 
 ## Demo
-Here's a [live playground](http://rawgit.com/buildo/react-flexview/master/dev/build/#/)
+Here's a [live playground](http://react-components.buildo.io/#flexview)
 
 ## Documentation
 Refer to the [Book of FlexView](http://buildo.github.io/react-flexview/)
@@ -115,4 +135,3 @@ As of today, `FlexView` has replaced the `div` as the brick of our projects and,
 You can see it in action here:
 - [buildo.io](https://buildo.io/)
 - [LexDo.it](https://www.lexdo.it/)
-- [OXWAY](http://app.oxway.co/#/)
