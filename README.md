@@ -28,7 +28,8 @@ For these reasons, we asked ourselves: is there a way to simplify the API and ha
 <FlexView wrap />
 ```
 
-Remember how difficult it was to center a `div` inside another `div`? *flexbox* definitely improved it, but still having to switch from `align-items` to `justify-content` based on `flex-direction` of the parent is confusing and error prone.
+Remember how difficult it was to center a `div` inside another `div`?
+*flexbox* definitely improved it, but still having to switch from `align-items` to `justify-content` based on `flex-direction` of the parent is confusing and error prone.
 
 `FlexView` lets you align and center `children` with two intuitive props: `vAlignContent` and `hAlignContent`.
 
@@ -73,8 +74,6 @@ And this is how you do it with `FlexView`:
 ```jsx
 <FlexView grow shrink basis={200} />
 ```
-
-Remember how difficult it was to center a `div` inside another `div`?
 
 ## How to use
 In your `app.js`:
