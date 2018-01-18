@@ -2,6 +2,13 @@
 
 
 
+## [v3.0.1](https://github.com/buildo/react-flexview/tree/v3.0.1) (2018-01-18)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v3.0.0...v3.0.1)
+
+#### Fixes (bugs & defects):
+
+- using the type FlexView.Props does not work [#57](https://github.com/buildo/react-flexview/issues/57)
+
 ## [v3.0.0](https://github.com/buildo/react-flexview/tree/v3.0.0) (2018-01-18)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v2.0.2...v3.0.0)
 
