@@ -2,6 +2,13 @@
 
 
 
+## [v3.0.0](https://github.com/buildo/react-flexview/tree/v3.0.0) (2018-01-18)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v2.0.2...v3.0.0)
+
+#### Breaking:
+
+- move @types deps to dev deps [#55](https://github.com/buildo/react-flexview/issues/55)
+
 ## [v2.0.2](https://github.com/buildo/react-flexview/tree/v2.0.2) (2017-12-07)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v2.0.1...v2.0.2)
 
