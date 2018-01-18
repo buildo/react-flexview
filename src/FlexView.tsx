@@ -51,7 +51,7 @@ export namespace FlexView {
 }
 
 /** A powerful React component to abstract over flexbox and create any layout on any browser */
-export default class FlexView extends React.Component<FlexView.Props, void> {
+export default class FlexView extends React.Component<FlexView.Props> {
 
   static propTypes = {
     children: PropTypes.node,
