@@ -36,12 +36,6 @@
   },
   "homepage": "https://github.com/buildo/react-flexview",
   "dependencies": {
-    "@types/classnames": "2.2.3",
-    "@types/lodash.omit": "4.5.3",
-    "@types/lodash.pick": "4.4.3",
-    "@types/lodash.some": "4.6.3",
-    "@types/prop-types": "15.5.2",
-    "@types/react": "16.0.25",
     "classnames": "^2.2.5",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
@@ -51,7 +45,13 @@
     "typelevel-ts": "^0.2.2"
   },
   "devDependencies": {
+    "@types/classnames": "2.2.3",
     "@types/jest": "21.1.8",
+    "@types/lodash.omit": "4.5.3",
+    "@types/lodash.pick": "4.4.3",
+    "@types/lodash.some": "4.6.3",
+    "@types/prop-types": "15.5.2",
+    "@types/react": "16.0.25",
     "@types/react-dom": "16.0.3",
     "babel-loader": "^7.1.2",
     "babel-preset-buildo": "^0.1.1",
