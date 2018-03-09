@@ -19,6 +19,7 @@ export namespace FlexView {
     children?: React.ReactNode,
     /** flex-direction: column */
     column?: boolean,
+    parentIsColumn?: boolean,
     /** align content vertically */
     vAlignContent?: 'top' | 'center' | 'bottom',
     /** align content horizontally */
@@ -35,8 +36,6 @@ export namespace FlexView {
     grow?: boolean | number,
     /** flex-shrink property */
     shrink?: boolean | number,
-    /** flex-basis property */
-    basis?: string | number,
     /** wrap content */
     wrap?: boolean,
     /** height property (for parent secondary axis) */
@@ -56,6 +55,7 @@ export class FlexView extends React.Component<FlexView.Props> {
   static propTypes = {
     children: PropTypes.node,
     column: PropTypes.bool,
+    parentIsColumn: PropTypes.bool,
     vAlignContent: PropTypes.oneOf(['top', 'center', 'bottom']),
     hAlignContent: PropTypes.oneOf(['left', 'center', 'right']),
     marginLeft: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -77,11 +77,7 @@ export class FlexView extends React.Component<FlexView.Props> {
   }
 
   logWarnings(): void {
-    const { basis, shrink, grow, hAlignContent, vAlignContent, children, column } = this.props;
-
-    if (basis === 'auto') {
-      warn('basis is "auto" by default: forcing it to "auto"  will leave "shrink:true" as default');
-    }
+    const { shrink, grow, hAlignContent, vAlignContent, children, column } = this.props;
 
     if (
       (shrink === false || shrink === 0) &&
@@ -129,7 +125,7 @@ export class FlexView extends React.Component<FlexView.Props> {
   }
 
   getShrink(): number {
-    const { shrink, basis } = this.props;
+    const { shrink } = this.props;
     if (typeof shrink === 'number') {
       return shrink;
     } else if (shrink) {
@@ -138,7 +134,7 @@ export class FlexView extends React.Component<FlexView.Props> {
       return 0;
     }
 
-    if (basis && basis !== 'auto') {
+    if (this.getBasis() !== 'auto') {
       return 0;
     }
 
@@ -146,8 +142,11 @@ export class FlexView extends React.Component<FlexView.Props> {
   }
 
   getBasis(): string {
-    const { basis } = this.props;
-    if (basis) {
+    const { width, height, parentIsColumn } = this.props;
+
+    const basis = parentIsColumn ? height : width;
+
+    if (typeof parentIsColumn === 'boolean' && basis) {
       const suffix = typeof basis === 'number' || String(parseInt(basis as string, 10)) === basis ? 'px' : '';
       return basis + suffix;
     }
@@ -210,13 +209,29 @@ export class FlexView extends React.Component<FlexView.Props> {
     return cx('react-flex-view', direction, contentAlignment, wrap, this.props.className);
   }
 
+  getMappedChildren(): React.ReactNode {
+    const { children, column } = this.props;
+
+    const isFlexView = (c: any): c is React.ReactElement<FlexView.Props> => React.isValidElement(c) && c.type === FlexView
+
+    const cloneFlexView = (f: React.ReactElement<FlexView.Props>) => React.cloneElement(f as any, { ...f.props, parentIsColumn: !!column })
+
+    if (Array.isArray(children)) {
+      return children.map(c => isFlexView(c) ? cloneFlexView(c) : c);
+    } else if (isFlexView(children)) {
+      return cloneFlexView(children);
+    }
+
+    return children;
+  }
+
   render() {
     const className = this.getClasses();
     const style = this.getStyle();
     const props = omit(this.props, Object.keys(FlexView.propTypes));
     return (
       <div className={className} style={style} {...props}>
-        {this.props.children}
+        {this.getMappedChildren()}
       </div>
     );
   }
