@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 import pick = require('lodash.pick');
 import omit = require('lodash.omit');
 import some = require('lodash.some');
-import { ObjectOverwrite } from 'typelevel-ts';
+import { ObjectOverwrite, ObjectOmit } from 'typelevel-ts';
 
 declare var process: { env: { NODE_ENV: 'production' | 'development' } };
 
@@ -14,7 +14,7 @@ function warn(warning: string): void {
   }
 }
 export namespace FlexView {
-  export type Props = ObjectOverwrite<React.HTMLProps<HTMLDivElement>, {
+  export type Props = ObjectOverwrite<ObjectOmit<React.HTMLProps<HTMLDivElement>, 'ref'>, {
     /** FlexView content */
     children?: React.ReactNode,
     /** flex-direction: column */
@@ -161,8 +161,6 @@ export class FlexView extends React.Component<FlexView.Props> {
     const basis = this.getBasis();
     const values = `${grow} ${shrink} ${basis}`;
     return {
-      WebkitBoxFlex: values,
-      MozBoxFlex: values,
       msFlex: values,
       WebkitFlex: values,
       flex: values
