@@ -5,8 +5,6 @@ exports[`FlexView renders correctly 1`] = `
   className="react-flex-view align-content-center justify-content-end flex-wrap"
   style={
     Object {
-      "MozBoxFlex": "1 1 auto",
-      "WebkitBoxFlex": "1 1 auto",
       "WebkitFlex": "1 1 auto",
       "flex": "1 1 auto",
       "msFlex": "1 1 auto",

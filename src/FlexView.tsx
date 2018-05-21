@@ -161,8 +161,6 @@ export class FlexView extends React.Component<FlexView.Props> {
     const basis = this.getBasis();
     const values = `${grow} ${shrink} ${basis}`;
     return {
-      WebkitBoxFlex: values,
-      MozBoxFlex: values,
       msFlex: values,
       WebkitFlex: values,
       flex: values
