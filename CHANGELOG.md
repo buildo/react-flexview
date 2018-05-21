@@ -2,6 +2,13 @@
 
 
 
+## [v3.0.2](https://github.com/buildo/react-flexview/tree/v3.0.2) (2018-05-21)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v3.0.1...v3.0.2)
+
+#### Fixes (bugs & defects):
+
+- ref prop type is broken [#63](https://github.com/buildo/react-flexview/issues/63)
+
 ## [v3.0.1](https://github.com/buildo/react-flexview/tree/v3.0.1) (2018-01-18)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v3.0.0...v3.0.1)
 
