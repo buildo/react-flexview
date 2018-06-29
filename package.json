@@ -36,12 +36,10 @@
   },
   "homepage": "https://github.com/buildo/react-flexview",
   "dependencies": {
-    "classnames": "^2.2.5",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "lodash.some": "^4.6.0",
     "prop-types": "^15.5.6",
-    "sass-flex-mixins": "^0.1.0",
     "typelevel-ts": "^0.3.1"
   },
   "devDependencies": {

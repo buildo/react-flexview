@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as cx from 'classnames';
 import * as PropTypes from 'prop-types';
 import pick = require('lodash.pick');
 import omit = require('lodash.omit');
@@ -198,41 +197,11 @@ export class FlexView extends React.Component<FlexView.Props> {
     };
   }
 
-  getContentAlignmentClasses(): string {
-    const vPrefix = this.props.column ? 'justify-content-' : 'align-content-';
-    const hPrefix = this.props.column ? 'align-content-' : 'justify-content-';
-
-    const vAlignContentClasses = {
-      top: `${vPrefix}start`,
-      center: `${vPrefix}center`,
-      bottom: `${vPrefix}end`
-    };
-
-    const hAlignContentClasses = {
-      left: `${hPrefix}start`,
-      center: `${hPrefix}center`,
-      right: `${hPrefix}end`
-    };
-
-    const vAlignContent = this.props.vAlignContent && vAlignContentClasses[this.props.vAlignContent];
-    const hAlignContent = this.props.hAlignContent && hAlignContentClasses[this.props.hAlignContent];
-
-    return cx(vAlignContent, hAlignContent);
-  }
-
-  getClasses(): string {
-    const direction = this.props.column && 'flex-column';
-    const contentAlignment = this.getContentAlignmentClasses();
-    const wrap = this.props.wrap && 'flex-wrap';
-    return cx('react-flex-view', direction, contentAlignment, wrap, this.props.className);
-  }
-
   render() {
-    const className = this.getClasses();
     const style = this.getStyle();
     const props = omit(this.props, Object.keys(FlexView.propTypes));
     return (
-      <div className={className} style={style} {...props}>
+      <div className={`react-flex-view ${this.props.className || ''}`.trim()} style={style} {...props}>
         {this.props.children}
       </div>
     );
