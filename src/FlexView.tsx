@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 import pick = require('lodash.pick');
 import omit = require('lodash.omit');
 import some = require('lodash.some');
-import { ObjectOverwrite, ObjectOmit } from 'typelevel-ts';
+import { Overwrite, Omit } from 'typelevel-ts';
 
 declare var process: { env: { NODE_ENV: 'production' | 'development' } };
 
@@ -14,7 +14,7 @@ function warn(warning: string): void {
   }
 }
 export namespace FlexView {
-  export type Props = ObjectOverwrite<ObjectOmit<React.HTMLProps<HTMLDivElement>, 'ref'>, {
+  export type Props = Overwrite<Omit<React.HTMLProps<HTMLDivElement>, 'ref'>, {
     /** FlexView content */
     children?: React.ReactNode,
     /** flex-direction: column */
