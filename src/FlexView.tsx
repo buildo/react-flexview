@@ -245,3 +245,5 @@ export class FlexView extends React.Component<FlexView.Props> {
   }
 
 }
+
+export default FlexView
