@@ -155,22 +155,19 @@ export class FlexView extends React.Component<FlexView.Props> {
     return 'auto'; // default
   }
 
-  getFlexStyle(): React.CSSProperties {
-    const grow = this.getGrow();
-    const shrink = this.getShrink();
-    const basis = this.getBasis();
-    const values = `${grow} ${shrink} ${basis}`;
-    return {
-      msFlex: values,
-      WebkitFlex: values,
-      flex: values
-    };
-  }
+  getStyle(): React.CSSProperties {
+    const { column, wrap, vAlignContent, hAlignContent } = this.props;
 
-  getContentAlignmentStyle(): React.CSSProperties {
-    const { column, vAlignContent, hAlignContent } = this.props;
+    const style = pick(this.props, [
+      'width',
+      'height',
+      'marginLeft',
+      'marginTop',
+      'marginRight',
+      'marginBottom'
+    ]);
 
-    const alignPropToFlex = (align: FlexView.Props['vAlignContent'] | FlexView.Props['hAlignContent']) => {
+    function alignPropToFlex(align: FlexView.Props['vAlignContent'] | FlexView.Props['hAlignContent']) {
       switch (align) {
         case 'top':
         case 'left': return 'flex-start'
@@ -181,22 +178,6 @@ export class FlexView extends React.Component<FlexView.Props> {
     }
 
     return {
-      justifyContent: alignPropToFlex(column ? vAlignContent : hAlignContent),
-      alignItems: alignPropToFlex(column ? hAlignContent : vAlignContent)
-    }
-  }
-
-  getStyle(): React.CSSProperties {
-    const style = pick(this.props, [
-      'width',
-      'height',
-      'marginLeft',
-      'marginTop',
-      'marginRight',
-      'marginBottom'
-    ]);
-
-    return {
       boxSizing: 'border-box',
 
       // some browsers don't set these by default on flex
@@ -205,10 +186,11 @@ export class FlexView extends React.Component<FlexView.Props> {
 
       // flex properties
       display: 'flex',
-      flexDirection: this.props.column ? 'column' : 'row',
-      flexWrap: this.props.wrap ? 'wrap' : 'nowrap',
-      ...this.getFlexStyle(),
-      ...this.getContentAlignmentStyle(),
+      flexDirection: column ? 'column' : 'row',
+      flexWrap: wrap ? 'wrap' : 'nowrap',
+      flex: `${this.getGrow()} ${this.getShrink()} ${this.getBasis()}`,
+      justifyContent: alignPropToFlex(column ? vAlignContent : hAlignContent),
+      alignItems: alignPropToFlex(column ? hAlignContent : vAlignContent),
 
       // style passed throw props
       ...style,
