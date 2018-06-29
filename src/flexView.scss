@@ -1,12 +1,6 @@
 @import '~sass-flex-mixins/src/sass-flex-mixins.scss';
 
 .react-flex-view {
-  box-sizing: 'border-box';
-
-  // some browsers don't set these by default on flex
-  min-width: 0;
-  min-height: 0;
-
   @include display_flex();
   @include flex_flex-direction(row);
   @include flex_flex-wrap(nowrap);

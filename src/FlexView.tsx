@@ -197,8 +197,20 @@ export class FlexView extends React.Component<FlexView.Props> {
     ]);
 
     return {
+      boxSizing: 'border-box',
+
+      // some browsers don't set these by default on flex
+      minWidth: 0,
+      minHeight: 0,
+
+      // flex properties
+      display: 'flex',
+      flexDirection: this.props.column ? 'column' : 'row',
+      flexWrap: this.props.wrap ? 'wrap' : 'nowrap',
       ...this.getFlexStyle(),
       ...this.getContentAlignmentStyle(),
+
+      // style passed throw props
       ...style,
       ...this.props.style
     };
