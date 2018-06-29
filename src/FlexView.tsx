@@ -167,6 +167,25 @@ export class FlexView extends React.Component<FlexView.Props> {
     };
   }
 
+  getContentAlignmentStyle(): React.CSSProperties {
+    const { column, vAlignContent, hAlignContent } = this.props;
+
+    const alignPropToFlex = (align: FlexView.Props['vAlignContent'] | FlexView.Props['hAlignContent']) => {
+      switch (align) {
+        case 'top':
+        case 'left': return 'flex-start'
+        case 'center': return 'center'
+        case 'bottom':
+        case 'right': return 'flex-end'
+      }
+    }
+
+    return {
+      justifyContent: alignPropToFlex(column ? vAlignContent : hAlignContent),
+      alignItems: alignPropToFlex(column ? hAlignContent : vAlignContent)
+    }
+  }
+
   getStyle(): React.CSSProperties {
     const style = pick(this.props, [
       'width',
@@ -176,7 +195,13 @@ export class FlexView extends React.Component<FlexView.Props> {
       'marginRight',
       'marginBottom'
     ]);
-    return { ...this.getFlexStyle(), ...style, ...this.props.style };
+
+    return {
+      ...this.getFlexStyle(),
+      ...this.getContentAlignmentStyle(),
+      ...style,
+      ...this.props.style
+    };
   }
 
   getContentAlignmentClasses(): string {
