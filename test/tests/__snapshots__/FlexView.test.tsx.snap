@@ -25,7 +25,6 @@ exports[`build build script generates every needed file 1`] = `
 Array [
   "FlexView.d.ts",
   "FlexView.js",
-  "flexView.css",
   "index.d.ts",
   "index.js",
 ]
