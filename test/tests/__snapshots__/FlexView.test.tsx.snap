@@ -2,12 +2,18 @@
 
 exports[`FlexView renders correctly 1`] = `
 <div
-  className="react-flex-view align-content-center justify-content-end flex-wrap"
+  className={undefined}
   style={
     Object {
-      "WebkitFlex": "1 1 auto",
+      "alignItems": "center",
+      "boxSizing": "border-box",
+      "display": "flex",
       "flex": "1 1 auto",
-      "msFlex": "1 1 auto",
+      "flexDirection": "row",
+      "flexWrap": "wrap",
+      "justifyContent": "flex-end",
+      "minHeight": 0,
+      "minWidth": 0,
     }
   }
 >
@@ -19,7 +25,6 @@ exports[`build build script generates every needed file 1`] = `
 Array [
   "FlexView.d.ts",
   "FlexView.js",
-  "flexView.css",
   "index.d.ts",
   "index.js",
 ]

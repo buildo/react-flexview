@@ -1,10 +1,9 @@
 import * as React from 'react';
-import * as cx from 'classnames';
 import * as PropTypes from 'prop-types';
 import pick = require('lodash.pick');
 import omit = require('lodash.omit');
 import some = require('lodash.some');
-import { ObjectOverwrite, ObjectOmit } from 'typelevel-ts';
+import { Overwrite, Omit } from 'typelevel-ts';
 
 declare var process: { env: { NODE_ENV: 'production' | 'development' } };
 
@@ -14,7 +13,7 @@ function warn(warning: string): void {
   }
 }
 export namespace FlexView {
-  export type Props = ObjectOverwrite<ObjectOmit<React.HTMLProps<HTMLDivElement>, 'ref'>, {
+  export type Props = Overwrite<Omit<React.HTMLProps<HTMLDivElement>, 'ref'>, {
     /** FlexView content */
     children?: React.ReactNode,
     /** flex-direction: column */
@@ -155,19 +154,9 @@ export class FlexView extends React.Component<FlexView.Props> {
     return 'auto'; // default
   }
 
-  getFlexStyle(): React.CSSProperties {
-    const grow = this.getGrow();
-    const shrink = this.getShrink();
-    const basis = this.getBasis();
-    const values = `${grow} ${shrink} ${basis}`;
-    return {
-      msFlex: values,
-      WebkitFlex: values,
-      flex: values
-    };
-  }
-
   getStyle(): React.CSSProperties {
+    const { column, wrap, vAlignContent, hAlignContent } = this.props;
+
     const style = pick(this.props, [
       'width',
       'height',
@@ -176,47 +165,48 @@ export class FlexView extends React.Component<FlexView.Props> {
       'marginRight',
       'marginBottom'
     ]);
-    return { ...this.getFlexStyle(), ...style, ...this.props.style };
-  }
 
-  getContentAlignmentClasses(): string {
-    const vPrefix = this.props.column ? 'justify-content-' : 'align-content-';
-    const hPrefix = this.props.column ? 'align-content-' : 'justify-content-';
+    function alignPropToFlex(align: FlexView.Props['vAlignContent'] | FlexView.Props['hAlignContent']) {
+      switch (align) {
+        case 'top':
+        case 'left': return 'flex-start'
+        case 'center': return 'center'
+        case 'bottom':
+        case 'right': return 'flex-end'
+      }
+    }
 
-    const vAlignContentClasses = {
-      top: `${vPrefix}start`,
-      center: `${vPrefix}center`,
-      bottom: `${vPrefix}end`
+    return {
+      boxSizing: 'border-box',
+
+      // some browsers don't set these by default on flex
+      minWidth: 0,
+      minHeight: 0,
+
+      // flex properties
+      display: 'flex',
+      flexDirection: column ? 'column' : 'row',
+      flexWrap: wrap ? 'wrap' : 'nowrap',
+      flex: `${this.getGrow()} ${this.getShrink()} ${this.getBasis()}`,
+      justifyContent: alignPropToFlex(column ? vAlignContent : hAlignContent),
+      alignItems: alignPropToFlex(column ? hAlignContent : vAlignContent),
+
+      // style passed through props
+      ...style,
+      ...this.props.style
     };
-
-    const hAlignContentClasses = {
-      left: `${hPrefix}start`,
-      center: `${hPrefix}center`,
-      right: `${hPrefix}end`
-    };
-
-    const vAlignContent = this.props.vAlignContent && vAlignContentClasses[this.props.vAlignContent];
-    const hAlignContent = this.props.hAlignContent && hAlignContentClasses[this.props.hAlignContent];
-
-    return cx(vAlignContent, hAlignContent);
-  }
-
-  getClasses(): string {
-    const direction = this.props.column && 'flex-column';
-    const contentAlignment = this.getContentAlignmentClasses();
-    const wrap = this.props.wrap && 'flex-wrap';
-    return cx('react-flex-view', direction, contentAlignment, wrap, this.props.className);
   }
 
   render() {
-    const className = this.getClasses();
     const style = this.getStyle();
     const props = omit(this.props, Object.keys(FlexView.propTypes));
     return (
-      <div className={className} style={style} {...props}>
+      <div className={this.props.className} style={style} {...props}>
         {this.props.children}
       </div>
     );
   }
 
 }
+
+export default FlexView

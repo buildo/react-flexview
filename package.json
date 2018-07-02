@@ -12,7 +12,7 @@
   "typings": "lib",
   "scripts": {
     "test": "jest",
-    "build": "rm -rf lib && mkdir lib && node-sass src --importer sass-importer.js --include-path node_modules -o lib && tsc",
+    "build": "rm -rf lib && mkdir lib && tsc",
     "preversion": "npm run test",
     "prepublish": "npm run build",
     "start": "styleguidist server",
@@ -36,13 +36,11 @@
   },
   "homepage": "https://github.com/buildo/react-flexview",
   "dependencies": {
-    "classnames": "^2.2.5",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "lodash.some": "^4.6.0",
     "prop-types": "^15.5.6",
-    "sass-flex-mixins": "^0.1.0",
-    "typelevel-ts": "^0.2.2"
+    "typelevel-ts": "^0.3.1"
   },
   "devDependencies": {
     "@types/classnames": "2.2.3",
@@ -55,24 +53,18 @@
     "@types/react-dom": "^16.0.3",
     "babel-loader": "^7.1.2",
     "babel-preset-buildo": "^0.1.1",
-    "css-loader": "^0.28.5",
     "file-loader": "^1.1.5",
     "jest": "^21.2.1",
-    "node-sass": "4.5.2",
     "progress-bar-webpack-plugin": "^1.10.0",
-    "raw-loader": "^0.5.1",
     "react": "^16",
-    "react-docgen-typescript": "^1.1.0",
+    "react-docgen-typescript": "1.1.0",
     "react-dom": "^16.2.0",
-    "react-styleguidist": "^6.0.33",
+    "react-styleguidist": "6.0.33",
     "react-test-renderer": "^16.2.0",
-    "require-dir": "^0.3.0",
-    "sass-loader": "^6.0.6",
     "smooth-release": "^8.0.0",
     "ts-jest": "^21.2.3",
     "ts-loader": "^2.3.3",
-    "typescript": "^2.5.3",
-    "url-loader": "^0.5.9",
+    "typescript": "^2.9.2",
     "webpack": "3.5.5"
   },
   "jest": {
