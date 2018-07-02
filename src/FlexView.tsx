@@ -191,7 +191,7 @@ export class FlexView extends React.Component<FlexView.Props> {
       justifyContent: alignPropToFlex(column ? vAlignContent : hAlignContent),
       alignItems: alignPropToFlex(column ? hAlignContent : vAlignContent),
 
-      // style passed throw props
+      // style passed through props
       ...style,
       ...this.props.style
     };
