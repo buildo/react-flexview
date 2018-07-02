@@ -2,6 +2,13 @@
 
 
 
+## [v4.0.0](https://github.com/buildo/react-flexview/tree/v4.0.0) (2018-07-02)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v3.0.2...v4.0.0)
+
+#### Breaking:
+
+- Should work without CSS in modern browsers [#66](https://github.com/buildo/react-flexview/issues/66)
+
 ## [v3.0.2](https://github.com/buildo/react-flexview/tree/v3.0.2) (2018-05-21)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v3.0.1...v3.0.2)
 
