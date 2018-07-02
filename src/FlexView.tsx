@@ -201,7 +201,7 @@ export class FlexView extends React.Component<FlexView.Props> {
     const style = this.getStyle();
     const props = omit(this.props, Object.keys(FlexView.propTypes));
     return (
-      <div className={`react-flex-view ${this.props.className || ''}`.trim()} style={style} {...props}>
+      <div className={this.props.className} style={style} {...props}>
         {this.props.children}
       </div>
     );
