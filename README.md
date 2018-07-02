@@ -39,49 +39,7 @@ Remember how difficult it was to center a `div` inside another `div`?
 </FlexView>
 ```
 
-**Bonus:** `FlexView` handles browser prefixes automatically.
-
-Here's a typical CSS snippet using *flexbox*:
-
-```css
-.flex-view {
-  /* flex */
-  display: flexbox;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  /* direction */
-  webkit-box-flex-direction: row;
-  moz-box-flex-direction: row;
-  ms-flex-direction: row;
-  webkit-flex-direction: row;
-  flex-direction: row;
-
-  /* grow, shrink, basis */
-  webkit-box-flex: 1 1 200px;
-  moz-box-flex: 1 1 200px;
-  ms-flex: 1 1 200px;
-  webkit-flex: 1 1 200px;
-  flex: 1 1 200px;
-}
-```
-
-And this is how you do it with `FlexView`:
-
-```jsx
-<FlexView grow shrink basis={200} />
-```
-
 ## How to use
-In your `app.js`:
-
-```js
-import 'react-flexview/lib/flexView.css' // FlexView is useless without its style
-```
-
 In your component:
 
 ```jsx
@@ -125,6 +83,16 @@ Here's a [live playground](http://react-components.buildo.io/#flexview)
 
 ## Documentation
 Refer to the [Book of FlexView](http://buildo.github.io/react-flexview/)
+
+## Supported browsers
+We removed vendor prefixes in [#66](https://github.com/buildo/react-flexview/issues/66), since than we only supports browsers that don't require prefixes for *flexbox* CSS properties which are most browsers:
+- IE 11
+- Edge (any version)
+- Google Chrome 29+
+- Firefox 28+
+- Safari 9+
+
+If you need to support older browsers, try with `FlexView` `3.x`.
 
 ## Used By
 At [buildo](https://buildo.io/) we've been using `FlexView` in production in every web application we built since [July 2015](https://github.com/buildo/react-components/pull/7) (it was in a different repo back then).
