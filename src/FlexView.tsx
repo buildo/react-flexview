@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import pick = require("lodash.pick");
 import omit = require("lodash.omit");
 import some = require("lodash.some");
 
@@ -204,14 +203,14 @@ export class FlexView extends React.Component<FlexView.Props> {
   getStyle(): React.CSSProperties {
     const { column, wrap, vAlignContent, hAlignContent } = this.props;
 
-    const style = pick(this.props, [
-      "width",
-      "height",
-      "marginLeft",
-      "marginTop",
-      "marginRight",
-      "marginBottom"
-    ]);
+    const style = {
+      width: this.props.width,
+      height: this.props.height,
+      marginLeft: this.props.marginLeft,
+      marginTop: this.props.marginTop,
+      marginRight: this.props.marginRight,
+      marginBottom: this.props.marginBottom
+    };
 
     function alignPropToFlex(
       align: FlexView.Props["vAlignContent"] | FlexView.Props["hAlignContent"]
