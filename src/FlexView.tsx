@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import omit = require("lodash.omit");
-import some = require("lodash.some");
 
 export type Omit<O, K extends string> = Pick<O, Exclude<keyof O, K>>;
 
@@ -14,6 +13,11 @@ function warn(warning: string): void {
     console.warn(warning); // eslint-disable-line no-console
   }
 }
+
+function some(array: any[], predicate: (v: any) => boolean): boolean {
+  return array.filter(predicate).length > 0;
+}
+
 export namespace FlexView {
   export type Props = Overwrite<
     Omit<React.HTMLProps<HTMLDivElement>, "ref">,
