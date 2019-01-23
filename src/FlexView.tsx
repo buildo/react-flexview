@@ -94,7 +94,7 @@ export class FlexView extends React.Component<FlexView.Props> {
 
     if (process.env.NODE_ENV !== 'production' && typeof children !== 'undefined' && !column && hAlignContent === 'center') {
       const atLeastOneChildHasHMarginAuto = some([].concat(children as any), (child: any) => {
-        const props = (typeof child === 'object' ? child.props : undefined) || {};
+        const props = (typeof child === 'object' && child !== null ? child.props : undefined) || {};
         const style = props.style || {};
 
         const marginLeft = style.marginLeft || props.marginLeft;
@@ -107,7 +107,7 @@ export class FlexView extends React.Component<FlexView.Props> {
 
     if (process.env.NODE_ENV !== 'production' && typeof children !== 'undefined' && column && vAlignContent === 'center') {
       const atLeastOneChildHasVMarginAuto = some([].concat(children as any), (child: any) => {
-        const props = (typeof child === 'object' ? child.props : undefined) || {};
+        const props = (typeof child === 'object' && child !== null ? child.props : undefined) || {};
         const style = props.style || {};
 
         const marginTop = style.marginTop || props.marginTop;
