@@ -2,6 +2,17 @@
 
 
 
+## [v4.0.2](https://github.com/buildo/react-flexview/tree/v4.0.2) (2019-01-23)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v4.0.1...v4.0.2)
+
+#### New features:
+
+- Typescript 2.9.2 failed when compiling typelevel-ts dependency [#69](https://github.com/buildo/react-flexview/issues/69)
+
+#### Fixes (bugs & defects):
+
+- unsafe check in development [#67](https://github.com/buildo/react-flexview/issues/67)
+
 ## [v4.0.1](https://github.com/buildo/react-flexview/tree/v4.0.1) (2018-07-06)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v4.0.0...v4.0.1)
 
