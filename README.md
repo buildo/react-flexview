@@ -3,7 +3,7 @@ A powerful React component to abstract over *flexbox* and create any layout on a
 
 ## Install
 ```
-npm i --save react-flexview
+yarn add react-flexview
 ```
 
 ## Why

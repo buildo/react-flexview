@@ -27,7 +27,7 @@ describe('FlexView', () => {
 describe('build', () => {
 
   it('build script generates every needed file', () => {
-    execSync('npm run build')
+    execSync('yarn build')
     expect(fs.readdirSync(path.resolve(__dirname, '../../lib'))).toMatchSnapshot()
   })
 
