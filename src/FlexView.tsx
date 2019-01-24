@@ -83,7 +83,6 @@ export class FlexView extends React.Component<FlexView.Props> {
         grow,
         hAlignContent,
         vAlignContent,
-        children,
         column
       } = this.props;
 
@@ -100,25 +99,25 @@ export class FlexView extends React.Component<FlexView.Props> {
         console.warn('passing both "grow" and "shrink={false}" is a no-op!');
       }
 
-      if (
-        typeof children !== "undefined" &&
-        !column &&
-        hAlignContent === "center"
-      ) {
-        const atLeastOneChildHasHMarginAuto = some(
-          [].concat(children as any),
-          (child: any) => {
-            const props =
-              (typeof child === "object" && child !== null
-                ? child.props
-                : undefined) || {};
-            const style = props.style || {};
+      const children: Array<
+        | React.ReactElement<
+            { [k: string]: any } & { style?: React.CSSProperties }
+          >
+        | React.ReactText
+      > = React.Children.toArray(this.props.children);
 
-            const marginLeft = style.marginLeft || props.marginLeft;
-            const marginRight = style.marginRight || props.marginRight;
-            return marginLeft === "auto" && marginRight === "auto";
+      if (!column && hAlignContent === "center") {
+        const atLeastOneChildHasHMarginAuto = some(children, child => {
+          if (typeof child !== "object") {
+            return false;
           }
-        );
+
+          const style = child.props.style || {};
+
+          const marginLeft = style.marginLeft || child.props.marginLeft;
+          const marginRight = style.marginRight || child.props.marginRight;
+          return marginLeft === "auto" && marginRight === "auto";
+        });
 
         atLeastOneChildHasHMarginAuto &&
           console.warn(
@@ -126,25 +125,18 @@ export class FlexView extends React.Component<FlexView.Props> {
           );
       }
 
-      if (
-        typeof children !== "undefined" &&
-        column &&
-        vAlignContent === "center"
-      ) {
-        const atLeastOneChildHasVMarginAuto = some(
-          [].concat(children as any),
-          (child: any) => {
-            const props =
-              (typeof child === "object" && child !== null
-                ? child.props
-                : undefined) || {};
-            const style = props.style || {};
-
-            const marginTop = style.marginTop || props.marginTop;
-            const marginBottom = style.marginBottom || props.marginBottom;
-            return marginTop === "auto" && marginBottom === "auto";
+      if (column && vAlignContent === "center") {
+        const atLeastOneChildHasVMarginAuto = some(children, child => {
+          if (typeof child !== "object") {
+            return false;
           }
-        );
+
+          const style = child.props.style || {};
+
+          const marginTop = style.marginTop || child.props.marginTop;
+          const marginBottom = style.marginBottom || child.props.marginBottom;
+          return marginTop === "auto" && marginBottom === "auto";
+        });
 
         atLeastOneChildHasVMarginAuto &&
           console.warn(
