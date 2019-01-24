@@ -10,11 +10,6 @@ export type Overwrite<O1, O2> = Pick<O1, Exclude<keyof O1, keyof O2>> & O2;
 
 declare var process: { env: { NODE_ENV: "production" | "development" } };
 
-function warn(warning: string): void {
-  if (process.env.NODE_ENV !== "production") {
-    console.warn(warning); // eslint-disable-line no-console
-  }
-}
 export namespace FlexView {
   export type Props = Overwrite<
     Omit<React.HTMLProps<HTMLDivElement>, "ref">,
@@ -81,81 +76,81 @@ export class FlexView extends React.Component<FlexView.Props> {
   }
 
   logWarnings(): void {
-    const {
-      basis,
-      shrink,
-      grow,
-      hAlignContent,
-      vAlignContent,
-      children,
-      column
-    } = this.props;
+    if (process.env.NODE_ENV !== "production") {
+      const {
+        basis,
+        shrink,
+        grow,
+        hAlignContent,
+        vAlignContent,
+        children,
+        column
+      } = this.props;
 
-    if (basis === "auto") {
-      warn(
-        'basis is "auto" by default: forcing it to "auto"  will leave "shrink:true" as default'
-      );
-    }
-
-    if (
-      (shrink === false || shrink === 0) &&
-      (grow === true || (typeof grow === "number" && grow > 0))
-    ) {
-      warn('passing both "grow" and "shrink={false}" is a no-op!');
-    }
-
-    if (
-      process.env.NODE_ENV !== "production" &&
-      typeof children !== "undefined" &&
-      !column &&
-      hAlignContent === "center"
-    ) {
-      const atLeastOneChildHasHMarginAuto = some(
-        [].concat(children as any),
-        (child: any) => {
-          const props =
-            (typeof child === "object" && child !== null
-              ? child.props
-              : undefined) || {};
-          const style = props.style || {};
-
-          const marginLeft = style.marginLeft || props.marginLeft;
-          const marginRight = style.marginRight || props.marginRight;
-          return marginLeft === "auto" && marginRight === "auto";
-        }
-      );
-
-      atLeastOneChildHasHMarginAuto &&
-        warn(
-          'In a row with hAlignContent="center" there should be no child with marginLeft and marginRight set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30'
+      if (basis === "auto") {
+        console.warn(
+          'basis is "auto" by default: forcing it to "auto"  will leave "shrink:true" as default'
         );
-    }
+      }
 
-    if (
-      process.env.NODE_ENV !== "production" &&
-      typeof children !== "undefined" &&
-      column &&
-      vAlignContent === "center"
-    ) {
-      const atLeastOneChildHasVMarginAuto = some(
-        [].concat(children as any),
-        (child: any) => {
-          const props =
-            (typeof child === "object" && child !== null
-              ? child.props
-              : undefined) || {};
-          const style = props.style || {};
+      if (
+        (shrink === false || shrink === 0) &&
+        (grow === true || (typeof grow === "number" && grow > 0))
+      ) {
+        console.warn('passing both "grow" and "shrink={false}" is a no-op!');
+      }
 
-          const marginTop = style.marginTop || props.marginTop;
-          const marginBottom = style.marginBottom || props.marginBottom;
-          return marginTop === "auto" && marginBottom === "auto";
-        }
-      );
+      if (
+        typeof children !== "undefined" &&
+        !column &&
+        hAlignContent === "center"
+      ) {
+        const atLeastOneChildHasHMarginAuto = some(
+          [].concat(children as any),
+          (child: any) => {
+            const props =
+              (typeof child === "object" && child !== null
+                ? child.props
+                : undefined) || {};
+            const style = props.style || {};
 
-      atLeastOneChildHasVMarginAuto &&
-        warn(
-          'In a column with vAlignContent="center" there should be no child with marginTop and marginBottom set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30'
+            const marginLeft = style.marginLeft || props.marginLeft;
+            const marginRight = style.marginRight || props.marginRight;
+            return marginLeft === "auto" && marginRight === "auto";
+          }
         );
+
+        atLeastOneChildHasHMarginAuto &&
+          console.warn(
+            'In a row with hAlignContent="center" there should be no child with marginLeft and marginRight set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30'
+          );
+      }
+
+      if (
+        typeof children !== "undefined" &&
+        column &&
+        vAlignContent === "center"
+      ) {
+        const atLeastOneChildHasVMarginAuto = some(
+          [].concat(children as any),
+          (child: any) => {
+            const props =
+              (typeof child === "object" && child !== null
+                ? child.props
+                : undefined) || {};
+            const style = props.style || {};
+
+            const marginTop = style.marginTop || props.marginTop;
+            const marginBottom = style.marginBottom || props.marginBottom;
+            return marginTop === "auto" && marginBottom === "auto";
+          }
+        );
+
+        atLeastOneChildHasVMarginAuto &&
+          console.warn(
+            'In a column with vAlignContent="center" there should be no child with marginTop and marginBottom set to "auto"\nhttps://github.com/buildo/react-flexview/issues/30'
+          );
+      }
     }
   }
 
