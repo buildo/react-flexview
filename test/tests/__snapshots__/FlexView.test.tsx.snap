@@ -11,9 +11,15 @@ exports[`FlexView renders correctly 1`] = `
       "flex": "1 1 auto",
       "flexDirection": "row",
       "flexWrap": "wrap",
+      "height": undefined,
       "justifyContent": "flex-end",
+      "marginBottom": undefined,
+      "marginLeft": undefined,
+      "marginRight": undefined,
+      "marginTop": undefined,
       "minHeight": 0,
       "minWidth": 0,
+      "width": undefined,
     }
   }
 >
