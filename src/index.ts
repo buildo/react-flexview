@@ -1,2 +1,2 @@
-import { FlexView } from './FlexView';
+import { FlexView } from "./FlexView";
 export default FlexView;

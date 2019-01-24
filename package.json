@@ -13,6 +13,7 @@
   "scripts": {
     "test": "jest",
     "build": "rm -rf lib && mkdir lib && tsc",
+    "prettier-write": "prettier --write '**/*.{js,ts,tsx}'",
     "preversion": "yarn test",
     "prepublish": "yarn build",
     "start": "styleguidist server",
@@ -54,6 +55,7 @@
     "babel-preset-buildo": "^0.1.1",
     "file-loader": "^1.1.5",
     "jest": "^21.2.1",
+    "prettier": "^1.16.1",
     "progress-bar-webpack-plugin": "^1.10.0",
     "react": "^16",
     "react-docgen-typescript": "1.1.0",
