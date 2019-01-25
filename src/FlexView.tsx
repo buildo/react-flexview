@@ -1,8 +1,5 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import pick = require("lodash.pick");
-import omit = require("lodash.omit");
-import some = require("lodash.some");
 
 export type Omit<O, K extends string> = Pick<O, Exclude<keyof O, K>>;
 
@@ -15,44 +12,50 @@ function warn(warning: string): void {
     console.warn(warning); // eslint-disable-line no-console
   }
 }
+
+function some(array: any[], predicate: (v: any) => boolean): boolean {
+  return array.filter(predicate).length > 0;
+}
+
+type DivProps = Omit<React.HTMLProps<HTMLDivElement>, "ref">;
+
+type FlexViewProps = {
+  /** FlexView content */
+  children?: React.ReactNode;
+  /** flex-direction: column */
+  column?: boolean;
+  /** align content vertically */
+  vAlignContent?: "top" | "center" | "bottom";
+  /** align content horizontally */
+  hAlignContent?: "left" | "center" | "right";
+  /** margin-left property ("auto" to align self right) */
+  marginLeft?: string | number;
+  /** margin-top property ("auto" to align self bottom) */
+  marginTop?: string | number;
+  /** margin-right property ("auto" to align self left) */
+  marginRight?: string | number;
+  /** margin-bottom property ("auto" to align self top) */
+  marginBottom?: string | number;
+  /** grow property (for parent primary axis) */
+  grow?: boolean | number;
+  /** flex-shrink property */
+  shrink?: boolean | number;
+  /** flex-basis property */
+  basis?: string | number;
+  /** wrap content */
+  wrap?: boolean;
+  /** height property (for parent secondary axis) */
+  height?: string | number;
+  /** width property (for parent secondary axis) */
+  width?: string | number;
+  /** class to pass to top level element of the component */
+  className?: string;
+  /** style object to pass to top level element of the component */
+  style?: React.CSSProperties;
+};
+
 export namespace FlexView {
-  export type Props = Overwrite<
-    Omit<React.HTMLProps<HTMLDivElement>, "ref">,
-    {
-      /** FlexView content */
-      children?: React.ReactNode;
-      /** flex-direction: column */
-      column?: boolean;
-      /** align content vertically */
-      vAlignContent?: "top" | "center" | "bottom";
-      /** align content horizontally */
-      hAlignContent?: "left" | "center" | "right";
-      /** margin-left property ("auto" to align self right) */
-      marginLeft?: string | number;
-      /** margin-top property ("auto" to align self bottom) */
-      marginTop?: string | number;
-      /** margin-right property ("auto" to align self left) */
-      marginRight?: string | number;
-      /** margin-bottom property ("auto" to align self top) */
-      marginBottom?: string | number;
-      /** grow property (for parent primary axis) */
-      grow?: boolean | number;
-      /** flex-shrink property */
-      shrink?: boolean | number;
-      /** flex-basis property */
-      basis?: string | number;
-      /** wrap content */
-      wrap?: boolean;
-      /** height property (for parent secondary axis) */
-      height?: string | number;
-      /** width property (for parent secondary axis) */
-      width?: string | number;
-      /** class to pass to top level element of the component */
-      className?: string;
-      /** style object to pass to top level element of the component */
-      style?: React.CSSProperties;
-    }
-  >;
+  export type Props = Overwrite<DivProps, FlexViewProps>;
 }
 
 /** A powerful React component to abstract over flexbox and create any layout on any browser */
@@ -204,14 +207,14 @@ export class FlexView extends React.Component<FlexView.Props> {
   getStyle(): React.CSSProperties {
     const { column, wrap, vAlignContent, hAlignContent } = this.props;
 
-    const style = pick(this.props, [
-      "width",
-      "height",
-      "marginLeft",
-      "marginTop",
-      "marginRight",
-      "marginBottom"
-    ]);
+    const style = {
+      width: this.props.width,
+      height: this.props.height,
+      marginLeft: this.props.marginLeft,
+      marginTop: this.props.marginTop,
+      marginRight: this.props.marginRight,
+      marginBottom: this.props.marginBottom
+    };
 
     function alignPropToFlex(
       align: FlexView.Props["vAlignContent"] | FlexView.Props["hAlignContent"]
@@ -249,11 +252,37 @@ export class FlexView extends React.Component<FlexView.Props> {
     };
   }
 
+  getDivProps(): DivProps & { [k in keyof FlexViewProps]?: never } {
+    const {
+      children,
+      className,
+      style,
+      column,
+      grow,
+      shrink,
+      basis,
+      wrap,
+      vAlignContent,
+      hAlignContent,
+      width,
+      height,
+      marginBottom,
+      marginTop,
+      marginLeft,
+      marginRight,
+      ...rest
+    } = this.props;
+
+    return rest;
+  }
+
   render() {
-    const style = this.getStyle();
-    const props = omit(this.props, Object.keys(FlexView.propTypes));
     return (
-      <div className={this.props.className} style={style} {...props}>
+      <div
+        className={this.props.className}
+        style={this.getStyle()}
+        {...this.getDivProps()}
+      >
         {this.props.children}
       </div>
     );
