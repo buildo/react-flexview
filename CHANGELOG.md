@@ -2,6 +2,13 @@
 
 
 
+## [v4.0.3](https://github.com/buildo/react-flexview/tree/v4.0.3) (2019-01-25)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v4.0.2...v4.0.3)
+
+#### New features:
+
+- Remove lodash deps [#72](https://github.com/buildo/react-flexview/issues/72)
+
 ## [v4.0.2](https://github.com/buildo/react-flexview/tree/v4.0.2) (2019-01-23)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v4.0.1...v4.0.2)
 
