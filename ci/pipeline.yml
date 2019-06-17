@@ -1,0 +1,59 @@
+resource_types:
+  - name: pull-request
+    type: docker-image
+    source:
+      repository: teliaoss/github-pr-resource
+
+resources:
+  - name: master
+    type: git
+    icon: github-circle
+    source:
+      uri: git@github.com:buildo/react-flexview
+      branch: master
+      private_key: ((private-key))
+
+  - name: pr
+    type: pull-request
+    source:
+      repository: buildo/react-flexview
+      access_token: ((github-token))
+
+jobs:
+  - name: pr-test
+    plan:
+      - get: react-flexview
+        resource: pr
+        trigger: true
+        version: every
+      - put: pr
+        params:
+          path: react-flexview
+          status: pending
+          context: concourse
+      - do:
+          - task: test
+            file: react-flexview/ci/test.yml
+            attempts: 2
+        on_success:
+          put: pr
+          params:
+            path: react-flexview
+            status: success
+            context: concourse
+        on_failure:
+          put: pr
+          params:
+            path: react-flexview
+            status: failure
+            context: concourse
+
+  - name: test
+    plan:
+      - get: react-flexview
+        resource: master
+        trigger: true
+      - do:
+          - task: test
+            file: react-flexview/ci/test.yml
+            attempts: 2

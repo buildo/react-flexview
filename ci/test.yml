@@ -1,0 +1,17 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: node
+    tag: 8-slim
+
+inputs:
+  - name: react-flexview
+
+caches:
+  - path: react-flexview/node_modules
+
+run:
+  path: ci/test.sh
+  dir: react-flexview
