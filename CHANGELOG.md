@@ -2,6 +2,9 @@
 
 
 
+## [v4.0.4](https://github.com/buildo/react-flexview/tree/v4.0.4) (2019-09-16)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v4.0.3...v4.0.4)
+
 ## [v4.0.3](https://github.com/buildo/react-flexview/tree/v4.0.3) (2019-01-25)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v4.0.2...v4.0.3)
 
