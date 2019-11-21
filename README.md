@@ -68,7 +68,7 @@ export default class Component extends React.Component {
 | **marginTop** | <code>union(String &#124; Number)</code> |  | *optional*. Margin-top property ("auto" to align self bottom) |
 | **marginRight** | <code>union(String &#124; Number)</code> |  | *optional*. Margin-right property ("auto" to align self left) |
 | **marginBottom** | <code>union(String &#124; Number)</code> |  | *optional*. Margin-bottom property ("auto" to align self top) |
-| **grow** | <code>union(Boolean &#124; Number)</code> |  | *optional*. Property (for parent primary axis) |
+| **grow** | <code>union(Boolean &#124; Number)</code> |  | *optional*. Flex-grow property |
 | **shrink** | <code>union(Boolean &#124; Number)</code> |  | *optional*. Flex-shrink property |
 | **basis** | <code>union(String &#124; Number)</code> |  | *optional*. Flex-basis property |
 | **wrap** | <code>Boolean</code> |  | *optional*. Wrap content |
