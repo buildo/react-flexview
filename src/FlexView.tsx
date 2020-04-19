@@ -8,8 +8,6 @@ interface ChildrenArray extends Array<Children> {}
 type ReactFragment = ChildrenArray;
 type Children = ReactChild | ReactFragment | boolean | null | undefined;
 
-export type Omit<O, K extends string> = Pick<O, Exclude<keyof O, K>>;
-
 export type Overwrite<O1, O2> = Pick<O1, Exclude<keyof O1, keyof O2>> & O2;
 
 declare var process: { env: { NODE_ENV: "production" | "development" } };
