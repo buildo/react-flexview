@@ -63,8 +63,9 @@ export namespace FlexView {
   export type Props = Overwrite<DivProps, FlexViewProps>;
 }
 
-/** A powerful React component to abstract over flexbox and create any layout on any browser */
-export class FlexView extends React.Component<FlexView.Props> {
+export class FlexViewInternal extends React.Component<
+  FlexView.Props & { divRef?: React.Ref<HTMLDivElement> }
+> {
   static propTypes = {
     children: PropTypes.node,
     column: PropTypes.bool,
@@ -275,6 +276,7 @@ export class FlexView extends React.Component<FlexView.Props> {
       marginTop,
       marginLeft,
       marginRight,
+      divRef,
       ...rest
     } = this.props;
 
@@ -284,6 +286,7 @@ export class FlexView extends React.Component<FlexView.Props> {
   render() {
     return (
       <div
+        ref={this.props.divRef}
         className={this.props.className}
         style={this.getStyle()}
         {...this.getDivProps()}
@@ -293,5 +296,9 @@ export class FlexView extends React.Component<FlexView.Props> {
     );
   }
 }
+
+export const FlexView = React.forwardRef<HTMLDivElement, FlexView.Props>(
+  (props, ref) => <FlexViewInternal {...props} divRef={ref} />
+);
 
 export default FlexView;
