@@ -2,6 +2,17 @@
 
 
 
+## [v5.0.0](https://github.com/buildo/react-flexview/tree/v5.0.0) (2020-04-20)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v4.0.4...v5.0.0)
+
+#### Breaking:
+
+- Allow to pass a ref for the underlying div [#80](https://github.com/buildo/react-flexview/issues/80)
+
+#### New features:
+
+- stricter children prop typings [#78](https://github.com/buildo/react-flexview/issues/78)
+
 ## [v4.0.4](https://github.com/buildo/react-flexview/tree/v4.0.4) (2019-09-16)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v4.0.3...v4.0.4)
 
