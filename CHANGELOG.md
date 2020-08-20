@@ -2,6 +2,13 @@
 
 
 
+## [v6.0.0](https://github.com/buildo/react-flexview/tree/v6.0.0) (2020-08-20)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v5.0.0...v6.0.0)
+
+#### New features:
+
+- more justify/align props? [#70](https://github.com/buildo/react-flexview/issues/70)
+
 ## [v5.0.0](https://github.com/buildo/react-flexview/tree/v5.0.0) (2020-04-20)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v4.0.4...v5.0.0)
 
