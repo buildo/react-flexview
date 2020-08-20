@@ -27,7 +27,7 @@ exports[`FlexView renders correctly 1`] = `
 </div>
 `;
 
-exports[`FlexView renders custom native elements 1`] = `
+exports[`FlexView renders custom intrinsic elements 1`] = `
 <form
   className={undefined}
   style={
