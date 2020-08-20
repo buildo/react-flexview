@@ -102,25 +102,16 @@ export class FlexViewInternal<
   logWarnings(): void {
     const {
       basis,
-      shrink,
-      grow,
       hAlignContent,
       vAlignContent,
       children,
-      column
+      column,
     } = this.props;
 
     if (basis === "auto") {
       warn(
         'basis is "auto" by default: forcing it to "auto"  will leave "shrink:true" as default'
       );
-    }
-
-    if (
-      (shrink === false || shrink === 0) &&
-      (grow === true || (typeof grow === "number" && grow > 0))
-    ) {
-      warn('passing both "grow" and "shrink={false}" is a no-op!');
     }
 
     if (
