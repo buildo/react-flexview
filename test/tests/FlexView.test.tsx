@@ -14,6 +14,22 @@ describe("FlexView", () => {
     );
     expect(component).toMatchSnapshot();
   });
+
+  it("renders custom intrinsic elements", () => {
+    const component = renderer.create(
+      <FlexView
+        component="form"
+        vAlignContent="center"
+        hAlignContent="right"
+        grow
+        shrink
+        wrap
+      >
+        CONTENT
+      </FlexView>
+    );
+    expect(component).toMatchSnapshot();
+  });
 });
 
 describe("build", () => {

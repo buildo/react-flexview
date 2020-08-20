@@ -22,7 +22,7 @@ function some(array: any[], predicate: (v: any) => boolean): boolean {
   return array.filter(predicate).length > 0;
 }
 
-type DivProps = Omit<React.HTMLProps<HTMLDivElement>, "ref">;
+type ElementProps = Omit<React.HTMLProps<HTMLElement>, "ref">;
 
 type FlexViewProps = {
   /** FlexView content */
@@ -57,10 +57,12 @@ type FlexViewProps = {
   className?: string;
   /** style object to pass to top level element of the component */
   style?: React.CSSProperties;
+  /** native dom component to render. Defaults to div */
+  component?: React.ElementType;
 };
 
 export namespace FlexView {
-  export type Props = Overwrite<DivProps, FlexViewProps>;
+  export type Props = Overwrite<ElementProps, FlexViewProps>;
 }
 
 export class FlexViewInternal extends React.Component<
@@ -82,7 +84,8 @@ export class FlexViewInternal extends React.Component<
     height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     className: PropTypes.string,
-    style: PropTypes.object
+    style: PropTypes.object,
+    component: PropTypes.elementType
   };
 
   componentDidMount() {
@@ -258,7 +261,7 @@ export class FlexViewInternal extends React.Component<
     };
   }
 
-  getDivProps(): DivProps & { [k in keyof FlexViewProps]?: never } {
+  getElementProps(): ElementProps & { [k in keyof FlexViewProps]?: never } {
     const {
       children,
       className,
@@ -277,6 +280,7 @@ export class FlexViewInternal extends React.Component<
       marginLeft,
       marginRight,
       divRef,
+      component,
       ...rest
     } = this.props;
 
@@ -284,16 +288,13 @@ export class FlexViewInternal extends React.Component<
   }
 
   render() {
-    return (
-      <div
-        ref={this.props.divRef}
-        className={this.props.className}
-        style={this.getStyle()}
-        {...this.getDivProps()}
-      >
-        {this.props.children}
-      </div>
-    );
+    return React.createElement(this.props.component || "div", {
+      ref: this.props.divRef,
+      className: this.props.className,
+      style: this.getStyle(),
+      children: this.props.children,
+      ...this.getElementProps()
+    });
   }
 }
 

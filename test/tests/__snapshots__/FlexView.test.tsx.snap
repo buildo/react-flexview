@@ -27,6 +27,33 @@ exports[`FlexView renders correctly 1`] = `
 </div>
 `;
 
+exports[`FlexView renders custom native elements 1`] = `
+<form
+  className={undefined}
+  style={
+    Object {
+      "alignItems": "center",
+      "boxSizing": "border-box",
+      "display": "flex",
+      "flex": "1 1 auto",
+      "flexDirection": "row",
+      "flexWrap": "wrap",
+      "height": undefined,
+      "justifyContent": "flex-end",
+      "marginBottom": undefined,
+      "marginLeft": undefined,
+      "marginRight": undefined,
+      "marginTop": undefined,
+      "minHeight": 0,
+      "minWidth": 0,
+      "width": undefined,
+    }
+  }
+>
+  CONTENT
+</form>
+`;
+
 exports[`build build script generates every needed file 1`] = `
 Array [
   "FlexView.d.ts",
