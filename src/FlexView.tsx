@@ -22,9 +22,12 @@ function some(array: any[], predicate: (v: any) => boolean): boolean {
   return array.filter(predicate).length > 0;
 }
 
-type DivProps = Omit<React.HTMLProps<HTMLDivElement>, "ref">;
+type ElementProps<P extends keyof JSX.IntrinsicElements> = Omit<
+  React.HTMLProps<React.ElementType<P>>,
+  "ref"
+>;
 
-type FlexViewProps = {
+type FlexViewProps<P extends keyof JSX.IntrinsicElements> = {
   /** FlexView content */
   children?: Children;
   /** flex-direction: column */
@@ -57,15 +60,21 @@ type FlexViewProps = {
   className?: string;
   /** style object to pass to top level element of the component */
   style?: React.CSSProperties;
+  /** native dom component to render. Defaults to div */
+  component?: P;
 };
 
 export namespace FlexView {
-  export type Props = Overwrite<DivProps, FlexViewProps>;
+  export type Props<P extends keyof JSX.IntrinsicElements> = Overwrite<
+    ElementProps<P>,
+    FlexViewProps<P>
+  >;
 }
 
-export class FlexViewInternal extends React.Component<
-  FlexView.Props & { divRef?: React.Ref<HTMLDivElement> }
-> {
+export class FlexViewInternal<
+  P extends keyof JSX.IntrinsicElements,
+  E = React.ElementType<P>
+> extends React.Component<FlexView.Props<P> & { componentRef?: React.Ref<E> }> {
   static propTypes = {
     children: PropTypes.node,
     column: PropTypes.bool,
@@ -82,7 +91,8 @@ export class FlexViewInternal extends React.Component<
     height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     className: PropTypes.string,
-    style: PropTypes.object
+    style: PropTypes.object,
+    component: PropTypes.elementType
   };
 
   componentDidMount() {
@@ -223,7 +233,9 @@ export class FlexViewInternal extends React.Component<
     };
 
     function alignPropToFlex(
-      align: FlexView.Props["vAlignContent"] | FlexView.Props["hAlignContent"]
+      align:
+        | FlexView.Props<P>["vAlignContent"]
+        | FlexView.Props<P>["hAlignContent"]
     ) {
       switch (align) {
         case "top":
@@ -258,7 +270,8 @@ export class FlexViewInternal extends React.Component<
     };
   }
 
-  getDivProps(): DivProps & { [k in keyof FlexViewProps]?: never } {
+  getElementProps(): ElementProps<P> &
+    { [k in keyof FlexViewProps<P>]?: never } {
     const {
       children,
       className,
@@ -276,7 +289,8 @@ export class FlexViewInternal extends React.Component<
       marginTop,
       marginLeft,
       marginRight,
-      divRef,
+      componentRef,
+      component,
       ...rest
     } = this.props;
 
@@ -284,21 +298,31 @@ export class FlexViewInternal extends React.Component<
   }
 
   render() {
-    return (
-      <div
-        ref={this.props.divRef}
-        className={this.props.className}
-        style={this.getStyle()}
-        {...this.getDivProps()}
-      >
-        {this.props.children}
-      </div>
-    );
+    return React.createElement(this.props.component || "div", {
+      ref: this.props.componentRef,
+      className: this.props.className,
+      style: this.getStyle(),
+      children: this.props.children,
+      ...this.getElementProps()
+    });
   }
 }
 
-export const FlexView = React.forwardRef<HTMLDivElement, FlexView.Props>(
-  (props, ref) => <FlexViewInternal {...props} divRef={ref} />
-);
+export const FlexView = React.forwardRef(
+  <P extends keyof JSX.IntrinsicElements>(
+    props: FlexView.Props<P>,
+    ref: React.Ref<React.ElementType<P>>
+  ) => (
+    // NOTE(gabro): For some reason this piece of code produces the error
+    // "Expression produces a union type that is too complex to represent."
+    // I haven't found a wayt to avoid it, so I guess we'll just
+    // @ts-ignore it
+    <FlexViewInternal {...props} componentRef={ref} />
+  )
+) as <P extends keyof JSX.IntrinsicElements = "div">(
+  props: FlexView.Props<P> & {
+    componentRef?: React.Ref<React.ElementType<P>>;
+  }
+) => React.ReactElement;
 
 export default FlexView;
