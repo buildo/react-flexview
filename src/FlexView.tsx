@@ -41,7 +41,7 @@ type FlexViewProps = {
   marginRight?: string | number;
   /** margin-bottom property ("auto" to align self top) */
   marginBottom?: string | number;
-  /** grow property (for parent primary axis) */
+  /** flex-grow property */
   grow?: boolean | number;
   /** flex-shrink property */
   shrink?: boolean | number;
