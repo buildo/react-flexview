@@ -2,6 +2,9 @@
 
 
 
+## [v6.0.1](https://github.com/buildo/react-flexview/tree/v6.0.1) (2020-08-20)
+[Full Changelog](https://github.com/buildo/react-flexview/compare/v6.0.0...v6.0.1)
+
 ## [v6.0.0](https://github.com/buildo/react-flexview/tree/v6.0.0) (2020-08-20)
 [Full Changelog](https://github.com/buildo/react-flexview/compare/v5.0.0...v6.0.0)
 
