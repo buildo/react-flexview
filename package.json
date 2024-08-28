@@ -60,7 +60,7 @@
     "ts-jest": "^21.2.3",
     "ts-loader": "^2.3.3",
     "typescript": "^3.8.3",
-    "webpack": "3.5.5"
+    "webpack": "5.94.0"
   },
   "jest": {
     "transform": {
